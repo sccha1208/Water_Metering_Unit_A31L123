@@ -1,0 +1,15 @@
+.\objects\a31l12x_hal_debug_frmwrk.o: ..\..\..\..\Drivers\Source\A31L12x_hal_debug_frmwrk.c
+.\objects\a31l12x_hal_debug_frmwrk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\a31l12x_hal_debug_frmwrk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\a31l12x_hal_debug_frmwrk.o: ..\..\..\..\Drivers\Include\A31L12x_hal_debug_frmwrk.h
+.\objects\a31l12x_hal_debug_frmwrk.o: ..\..\..\..\Drivers\Include\A31L12x_hal_uartn.h
+.\objects\a31l12x_hal_debug_frmwrk.o: ..\..\..\..\Core\Device\ABOV\A31L12x\Include\A31L12x.h
+.\objects\a31l12x_hal_debug_frmwrk.o: C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h
+.\objects\a31l12x_hal_debug_frmwrk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\a31l12x_hal_debug_frmwrk.o: C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\a31l12x_hal_debug_frmwrk.o: C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\a31l12x_hal_debug_frmwrk.o: C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\a31l12x_hal_debug_frmwrk.o: ..\..\..\..\Core\Device\ABOV\A31L12x\Include\system_A31L12x.h
+.\objects\a31l12x_hal_debug_frmwrk.o: ..\..\..\..\Drivers\Include\A31L12x_hal_aa_types.h
+.\objects\a31l12x_hal_debug_frmwrk.o: ..\..\..\..\Drivers\Include\A31L12x_hal_libcfg.h
+.\objects\a31l12x_hal_debug_frmwrk.o: ..\..\..\..\Drivers\Include\A31L12x_hal_pcu.h

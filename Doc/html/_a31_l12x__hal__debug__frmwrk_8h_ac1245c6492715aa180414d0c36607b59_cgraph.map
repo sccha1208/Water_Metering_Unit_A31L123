@@ -1,0 +1,6 @@
+<map id="UARTPutHex" name="UARTPutHex">
+<area shape="rect" id="node1" title="Puts a hex number to UART port." alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a7e7f61fa79d52e2ba38085032eab8f5f" title="Puts a character to UART port." alt="" coords="152,5,255,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__uartn_8h.html#ab1488eccbac797387079ab39be51ac38" title="Send a block of data via UART peripheral." alt="" coords="303,5,448,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__uartn_8c.html#aa7dfea0108c5ea92d4bc9f5c79ef9e4d" title="Transmit a single data through UART peripheral." alt="" coords="496,5,668,32"/>
+</map>

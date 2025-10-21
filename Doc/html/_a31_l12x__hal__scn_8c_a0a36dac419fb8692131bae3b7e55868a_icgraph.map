@@ -1,0 +1,5 @@
+<map id="HAL_SC_ClearStatus" name="HAL_SC_ClearStatus">
+<area shape="rect" id="node1" title="Clear Status register in SCn peripheral." alt="" coords="183,31,329,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scn_8c.html#ab3874bdeb76d2ee4368e18e8bcb2816f" title="Initialize the SCn peripheral with the specified parameters." alt="" coords="22,5,118,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__scn_8c.html#acea8f8dcab4b5e8e65588666a1b0f482" title="Send a block of data via SCn peripheral." alt="" coords="5,56,135,83"/>
+</map>

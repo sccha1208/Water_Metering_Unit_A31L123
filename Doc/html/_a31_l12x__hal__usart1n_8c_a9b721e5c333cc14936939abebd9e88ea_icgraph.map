@@ -1,0 +1,5 @@
+<map id="HAL_USART_ReceiveByte" name="HAL_USART_ReceiveByte">
+<area shape="rect" id="node1" title="Receive a single data from USART peripheral." alt="" coords="203,31,379,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__usart1n_8c.html#a2095d581460704baf96d9ba7f552db19" title="Initialize the USART1n peripheral with the specified parameters." alt="" coords="19,5,141,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__usart1n_8c.html#a4aecc404a5e0f5569ac7c3c739d3d8d1" title="Receive a block of data via USART peripheral." alt="" coords="5,56,155,83"/>
+</map>

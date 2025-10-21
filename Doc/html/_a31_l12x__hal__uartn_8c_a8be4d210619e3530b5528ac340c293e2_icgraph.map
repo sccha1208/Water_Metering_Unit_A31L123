@@ -1,0 +1,4 @@
+<map id="HAL_UART_ConfigStructInit" name="HAL_UART_ConfigStructInit">
+<area shape="rect" id="node1" title="Fills each UARTn_Config member with its default value:" alt="" coords="180,5,363,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#aa79ebfdcc65f8acaa847e9deaecea5a0" title="Initializes Debug Framework through initializing UARTn." alt="" coords="5,5,132,32"/>
+</map>

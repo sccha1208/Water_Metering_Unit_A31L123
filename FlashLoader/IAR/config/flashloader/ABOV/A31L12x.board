@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$TOOLKIT_DIR$\config\flashloader\ABOV\FlashA31L12x_FLASH.flash</loader>
+    <range>CODE 0x00000000 0x0000FFFF</range>
+  </pass>
+  <pass>
+    <loader>$TOOLKIT_DIR$\config\flashloader\ABOV\FlashA31L12x_CFG.flash</loader>
+    <range>CODE 0x1FFFF200 0x1FFFF7FF</range>
+    <args>--enable_config_write</args>
+  </pass>
+</flash_board>
+

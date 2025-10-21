@@ -1,0 +1,5 @@
+<map id="SPIn_Send" name="SPIn_Send">
+<area shape="rect" id="node1" title="Send a block of data via SPIn peripheral." alt="" coords="5,31,92,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__spin_8c.html#aa7160a64d584a3c71730f866ca316198" title="This function clears the flag bit of Status Register." alt="" coords="140,5,265,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__spin_8c.html#aadf346031053de8e608eca482155746f" title="Transmit a single data through SPIn peripheral." alt="" coords="145,56,260,83"/>
+</map>

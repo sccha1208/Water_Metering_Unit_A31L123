@@ -1,0 +1,5 @@
+<map id="UARTGetChar" name="UARTGetChar">
+<area shape="rect" id="node1" title="Get a character to UART port." alt="" coords="5,5,109,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__uartn_8h.html#acc979b053c6e3a4fd224714df511b4f5" title="Receive a block of data via UART peripheral." alt="" coords="157,5,297,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__uartn_8c.html#aea7d60af1ecdb767452af416422e3446" title="Receive a single data from UART peripheral." alt="" coords="345,5,512,32"/>
+</map>

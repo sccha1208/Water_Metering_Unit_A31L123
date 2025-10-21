@@ -1,0 +1,4 @@
+<map id="HAL_UART_Transmit" name="HAL_UART_Transmit">
+<area shape="rect" id="node1" title="Send a block of data via UART peripheral." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__uartn_8c.html#aa7dfea0108c5ea92d4bc9f5c79ef9e4d" title="Transmit a single data through UART peripheral." alt="" coords="199,5,371,32"/>
+</map>

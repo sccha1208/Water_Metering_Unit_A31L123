@@ -1,0 +1,25 @@
+[FILEFORMAT]
+rev=1.0
+
+[CHIP]
+name=A31L122
+endiansupport=littleonly
+thumbsupport=true
+armsupport=false
+fpu=
+JTAG=false
+SWD=true
+SWO_TraceD0=false
+
+[CORE]
+name=Cortex-M0+
+
+[DDF FILE]
+name=ABOV\A31L12x.ddf
+
+[LINKER FILE]
+name=$TOOLKIT_DIR$\config\linker\ABOV\A31L122.icf
+
+[FLASH LOADER]
+name=$TOOLKIT_DIR$\config\flashloader\ABOV\A31L12x.board
+

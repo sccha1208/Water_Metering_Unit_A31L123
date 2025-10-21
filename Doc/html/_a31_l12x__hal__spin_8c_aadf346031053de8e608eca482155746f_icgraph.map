@@ -1,0 +1,4 @@
+<map id="SPIn_SendByte" name="SPIn_SendByte">
+<area shape="rect" id="node1" title="Transmit a single data through SPIn peripheral." alt="" coords="140,5,255,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__spin_8c.html#aa02b82b64c820e19cea4507a9d2dd19a" title="Send a block of data via SPIn peripheral." alt="" coords="5,5,92,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="HAL_TIMER4n_DeInit" name="HAL_TIMER4n_DeInit">
+<area shape="rect" id="node1" title="Close Timer/Counter device." alt="" coords="5,46,152,73"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scu_8h.html#a16f73f090619c7c14921ce4e74810fb3" title="Set Each Peripheral Clock." alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__scu_8h.html#a70aae42e5143164593294fd141d73612" title="Set/Reset Each Peripheral Block Reset of PPRST1 Register." alt="" coords="200,71,347,112"/>
+</map>

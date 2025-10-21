@@ -1,0 +1,6 @@
+<map id="UARTPutDec16" name="UARTPutDec16">
+<area shape="rect" id="node1" title="Puts a decimal number to UART port." alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a7e7f61fa79d52e2ba38085032eab8f5f" title="Puts a character to UART port." alt="" coords="167,5,269,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__uartn_8h.html#ab1488eccbac797387079ab39be51ac38" title="Send a block of data via UART peripheral." alt="" coords="317,5,463,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__uartn_8c.html#aa7dfea0108c5ea92d4bc9f5c79ef9e4d" title="Transmit a single data through UART peripheral." alt="" coords="511,5,683,32"/>
+</map>

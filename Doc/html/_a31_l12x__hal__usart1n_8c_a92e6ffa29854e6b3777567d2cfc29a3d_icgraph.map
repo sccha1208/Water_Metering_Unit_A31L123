@@ -1,0 +1,4 @@
+<map id="HAL_USART_TransmitByte" name="HAL_USART_TransmitByte">
+<area shape="rect" id="node1" title="Transmit a single data through USART peripheral." alt="" coords="208,5,389,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__usart1n_8c.html#ace14a8928f7d2c44dea80b03da70a4b5" title="Send a block of data via USART peripheral." alt="" coords="5,5,160,32"/>
+</map>

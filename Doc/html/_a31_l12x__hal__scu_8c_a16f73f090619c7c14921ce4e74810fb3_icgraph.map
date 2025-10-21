@@ -1,0 +1,5 @@
+<map id="HAL_SCU_Peripheral_EnableClock1" name="HAL_SCU_Peripheral_EnableClock1">
+<area shape="rect" id="node1" title="Set Each Peripheral Clock." alt="" coords="200,23,347,65"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__timer4n_8c.html#a1853b360620f700e4bc832921e0d4dbc" title="Close Timer/Counter device." alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__timer4n_8c.html#a9c5094d31ea28f84b12ab64620e555dd" title="Initialize the TIMER4n peripheral with the specified parameters." alt="" coords="13,56,144,83"/>
+</map>

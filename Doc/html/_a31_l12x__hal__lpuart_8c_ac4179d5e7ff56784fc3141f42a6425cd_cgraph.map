@@ -1,0 +1,4 @@
+<map id="HAL_LPUART_Receive" name="HAL_LPUART_Receive">
+<area shape="rect" id="node1" title="Receive a block of data via LPUART peripheral." alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__lpuart_8c.html#aa36c3b5f7446779e7563d5ad607ff849" title="Receive a single data from USART peripheral." alt="" coords="209,5,392,32"/>
+</map>

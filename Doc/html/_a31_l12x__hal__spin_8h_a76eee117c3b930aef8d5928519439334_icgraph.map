@@ -1,0 +1,5 @@
+<map id="SPIn_ReceiveByte" name="SPIn_ReceiveByte">
+<area shape="rect" id="node1" title="Receive a single data from SPIn peripheral." alt="" coords="160,31,289,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__spin_8c.html#aa04293967566099d8ae083b36b82f644" title="Initialize the SPIn peripheral with the specified parameters." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__spin_8c.html#aba913179e402247e21aed7a9407d4e7e" title="Receive a block of data via SPIn peripheral." alt="" coords="7,56,110,83"/>
+</map>

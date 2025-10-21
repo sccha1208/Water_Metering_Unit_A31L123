@@ -1,0 +1,7 @@
+<map id="HAL_DMAC_Setup" name="HAL_DMAC_Setup">
+<area shape="rect" id="node1" title="Enable the transfer." alt="" coords="537,31,671,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__i2cn_8c.html#ad81085c9b3265be137e1722e61fa917a" title="Transmit and Receive data in master mode by DMA." alt="" coords="260,5,489,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__i2cn_8c.html#a93b983df75e1ac7e2870e55b918d9f30" title="Receive and Transmit data in slave mode by DMA." alt="" coords="265,56,485,83"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__i2cn_8c.html#aa01b5aa29e7cad2ecee3cae85ba37a63" title="Transmit an array of bytes in Master mode by DMA." alt="" coords="5,5,212,32"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__i2cn_8c.html#af102bb04f3bcef61569512085f8848d1" title="Receive an array of bytes in Slave mode by DMA." alt="" coords="13,56,205,83"/>
+</map>

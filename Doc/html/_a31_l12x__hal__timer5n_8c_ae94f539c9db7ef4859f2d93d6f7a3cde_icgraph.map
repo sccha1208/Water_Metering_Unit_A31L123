@@ -1,0 +1,4 @@
+<map id="HAL_TIMER5n_ClearCounter" name="HAL_TIMER5n_ClearCounter">
+<area shape="rect" id="node1" title="Clear Counter and Prescaler." alt="" coords="184,5,373,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__timer5n_8c.html#a0929502fc0b916af4855953fbcd3f397" title="Initialize the TIMER5n peripheral with the specified parameters." alt="" coords="5,5,136,32"/>
+</map>

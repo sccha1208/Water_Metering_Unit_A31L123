@@ -1,0 +1,6 @@
+<map id="HAL_I2C_MasterTransmit_DMA" name="HAL_I2C_MasterTransmit_DMA">
+<area shape="rect" id="node1" title="Transmit an array of bytes in Master mode by DMA." alt="" coords="5,31,212,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__i2cn_8c.html#ad81085c9b3265be137e1722e61fa917a" title="Transmit and Receive data in master mode by DMA." alt="" coords="260,31,489,57"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__dmacn_8h.html#aed27eb8ff1494f44b94c8ed749f6a010" title="Enable the transfer." alt="" coords="537,5,671,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__i2cn_8c.html#a4a2199129f04199e68f6f52bdaefcbdb" title="wait and return status in master mode" alt="" coords="557,56,651,83"/>
+</map>

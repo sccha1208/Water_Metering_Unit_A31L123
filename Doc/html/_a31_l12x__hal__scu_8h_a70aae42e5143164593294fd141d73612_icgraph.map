@@ -1,0 +1,4 @@
+<map id="HAL_SCU_Peripheral_SetReset1" name="HAL_SCU_Peripheral_SetReset1">
+<area shape="rect" id="node1" title="Set/Reset Each Peripheral Block Reset of PPRST1 Register." alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__timer4n_8c.html#a1853b360620f700e4bc832921e0d4dbc" title="Close Timer/Counter device." alt="" coords="5,13,152,39"/>
+</map>

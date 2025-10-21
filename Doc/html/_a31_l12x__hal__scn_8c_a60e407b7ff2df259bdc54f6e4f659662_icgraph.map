@@ -1,0 +1,5 @@
+<map id="HAL_SC_ReceiveByte" name="HAL_SC_ReceiveByte">
+<area shape="rect" id="node1" title="Receive a single data from SCn peripheral." alt="" coords="177,31,328,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scn_8c.html#ab3874bdeb76d2ee4368e18e8bcb2816f" title="Initialize the SCn peripheral with the specified parameters." alt="" coords="19,5,115,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__scn_8c.html#a569274c4acdc7b2fbedf82ac919a46f6" title="Receive a block of data via SCn peripheral." alt="" coords="5,56,129,83"/>
+</map>

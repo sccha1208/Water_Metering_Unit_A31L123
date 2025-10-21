@@ -1,0 +1,5 @@
+<map id="HAL_SC_Transmit" name="HAL_SC_Transmit">
+<area shape="rect" id="node1" title="Send a block of data via SCn peripheral." alt="" coords="5,31,135,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scn_8c.html#a0a36dac419fb8692131bae3b7e55868a" title="Clear Status register in SCn peripheral." alt="" coords="187,5,334,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__scn_8c.html#a3c3d371b14a2fa00815bd43de8a7fbe1" title="Transmit a single data through SCn peripheral." alt="" coords="183,56,339,83"/>
+</map>

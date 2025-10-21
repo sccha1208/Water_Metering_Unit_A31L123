@@ -1,0 +1,7 @@
+<map id="HAL_I2C_Master_Transmit" name="HAL_I2C_Master_Transmit">
+<area shape="rect" id="node1" title="Transmit an array of bytes in Master mode." alt="" coords="5,56,183,83"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__i2cn_8c.html#aedbb9343dec1237085f9e9f1bc1a033d" title="Transmit and Receive data in master mode." alt="" coords="231,56,424,83"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__i2cn_8c.html#a4a2199129f04199e68f6f52bdaefcbdb" title="wait and return status in master mode" alt="" coords="507,5,600,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__i2cn_8c.html#afd408e2448333d4efa4b237c73a8cfcb" title="Convert from I2C peripheral to number." alt="" coords="503,56,603,83"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__i2cn_8c.html#a133ae17b04b34797ec747141b0a4d4e9" title="Enable/Disable interrupt for I2C peripheral." alt="" coords="472,107,635,133"/>
+</map>

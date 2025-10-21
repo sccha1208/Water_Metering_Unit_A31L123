@@ -1,0 +1,8 @@
+<map id="HAL_SC_Init" name="HAL_SC_Init">
+<area shape="rect" id="node1" title="Initialize the SCn peripheral with the specified parameters." alt="" coords="5,115,101,141"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scn_8c.html#a0a36dac419fb8692131bae3b7e55868a" title="Clear Status register in SCn peripheral." alt="" coords="151,5,298,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__scn_8c.html#a60e407b7ff2df259bdc54f6e4f659662" title="Receive a single data from SCn peripheral." alt="" coords="149,56,300,83"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__scu_8h.html#a7d0a497cdf6bc58ed14a54aed75a04ec" title="Set Each Peripheral Clock." alt="" coords="151,107,298,149"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__scu_8h.html#a86f85811c7a32616b6f21328fa2d868f" title="Set/Reset Each Peripheral Block Reset of PPRST2 Register." alt="" coords="151,173,298,214"/>
+<area shape="rect" id="node6" href="$_a31_l12x__hal__scn_8c.html#ac35d6237c238c9f724376cdbff80809c" title="Determines best dividers to get a target clock rate." alt="" coords="169,239,280,265"/>
+</map>

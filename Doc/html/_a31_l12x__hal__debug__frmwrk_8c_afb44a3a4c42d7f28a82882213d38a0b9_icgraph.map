@@ -1,0 +1,5 @@
+<map id="UARTPuts" name="UARTPuts">
+<area shape="rect" id="node1" title="Puts a string to UART port." alt="" coords="319,5,401,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#aa79ebfdcc65f8acaa847e9deaecea5a0" title="Initializes Debug Framework through initializing UARTn." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a4948fa615b0a307158db94b71b37801b" title="Puts a string to UART port and print new line." alt="" coords="180,31,271,57"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="HAL_SC_TransmitByte" name="HAL_SC_TransmitByte">
+<area shape="rect" id="node1" title="Transmit a single data through SCn peripheral." alt="" coords="183,5,339,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scn_8c.html#acea8f8dcab4b5e8e65588666a1b0f482" title="Send a block of data via SCn peripheral." alt="" coords="5,5,135,32"/>
+</map>

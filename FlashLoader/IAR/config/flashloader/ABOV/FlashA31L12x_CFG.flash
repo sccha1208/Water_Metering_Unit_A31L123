@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$TOOLKIT_DIR$\config\flashloader\ABOV\FlashA31L12x_CFG.out</exe>
+  <page>128</page>
+  <block>32 0x80</block>
+  <flash_base>0x1FFFF200</flash_base>
+  <aggregate>1</aggregate>
+</flash_device>
+

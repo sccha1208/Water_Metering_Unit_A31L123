@@ -1,0 +1,4 @@
+<map id="SPIn_ClearStatus" name="SPIn_ClearStatus">
+<area shape="rect" id="node1" title="This function clears the flag bit of Status Register." alt="" coords="140,5,265,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__spin_8c.html#aa02b82b64c820e19cea4507a9d2dd19a" title="Send a block of data via SPIn peripheral." alt="" coords="5,5,92,32"/>
+</map>

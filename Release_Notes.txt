@@ -1,0 +1,65 @@
+ABOV Semiconductor Co., Ltd.
+
+A31L12x_EVK
+
+A31L12x_EVK_v1.5.0
+========================================
+   *  ABOV Disclaimer modified
+
+A31L12x_EVK_v1.4.0
+========================================
+   *  Updated version rule
+   *  Fixed HAL_GPIO_ConfigOutput()
+   *  Fixed I2Cn_Mwait():   I2Cx ->ST ==>> tmp
+
+
+A31L12x_EVK_v1.3.0
+========================================
+   *  Fixed HAL_PWR_EnterSleepMode()
+   *  Fixed HAL_PWR_EnterPowerDownMode()
+   *  Fixed Driver:   SCUCG_StopMonClk()  ==> HAL_SCU_ClockMonitoring_Disable()
+   *  Fixed HAL_SCU_SetWakupData()
+   *  Renamed SPIn_Init() to HAL_SPIn_Init()
+   *  Removed XTFLSR register
+   *  Fixed HAL_SCU_MainXtal_PinConfig()
+   *  Fixed HAL_SCU_SubXtal_PinConfig ()
+
+
+A31L12x_EVK_v1.2.0
+========================================
+   *  Changed @author:   "ABOV M team" ==> "ABOV Application Team"
+   *  Fixed HAL_UART_Transmit():   UART1 ==> UARTx
+   *  Added the registers for Configuration Option Area Page 0 in svd file
+   *  Added device:   A31L122
+
+
+A31L12x_EVK_v1.1.0
+========================================
+   *  Added folder:   Core/CMSIS/Include
+   *  Added folder:   SFR
+   *  Changed folder structure:   Device ---> Core/Device
+   *  Changed folder name:   Documentation --> Doc
+   *  Deleted file:   slib.c
+   *  Deleted file:   slib.h
+   *  Added file:   Drivers/Include/A31L12x_hal_libcfg.h
+   *  Added file:   Examples/.../A31L12x_it.*
+   *  Added file:   Examples/.../A31L12x_PortInit.c
+   *  Added file:   Examples/.../A31L12x_SystemClock.c
+   *  Added file:   Examples/.../main_conf.h
+   *  Merged file:   A31L12x_SCUCC.* + A31L12x_SCUCG.* ==> A31L12x_SCU.*
+   *  Changed file name:   Driver/*.*
+   *  Changed file:   Device/
+   *  Changed file:   Drivers/
+   *  Changed file:   Examples/
+
+
+A31L12x_EVK_v1.0.0
+========================================
+   Initial Version
+   Fixed I2Cn_Init() I2Cn_DeInit()
+   Fixed USART1n_DataControlConfig()
+   Fixed SCUCC_GetRstSrc()
+   Renamed PMU_Test to PMU_AllPowerOff
+   Updated PMU_AllPowerOff Example
+   Added PMU_SRAMRetentionPower Example
+

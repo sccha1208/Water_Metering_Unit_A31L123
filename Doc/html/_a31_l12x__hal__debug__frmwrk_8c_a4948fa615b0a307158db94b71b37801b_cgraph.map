@@ -1,0 +1,7 @@
+<map id="UARTPuts_" name="UARTPuts_">
+<area shape="rect" id="node1" title="Puts a string to UART port and print new line." alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#afb44a3a4c42d7f28a82882213d38a0b9" title="Puts a string to UART port." alt="" coords="144,5,227,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a7e7f61fa79d52e2ba38085032eab8f5f" title="Puts a character to UART port." alt="" coords="275,5,377,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__uartn_8h.html#ab1488eccbac797387079ab39be51ac38" title="Send a block of data via UART peripheral." alt="" coords="425,5,571,32"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__uartn_8c.html#aa7dfea0108c5ea92d4bc9f5c79ef9e4d" title="Transmit a single data through UART peripheral." alt="" coords="619,5,791,32"/>
+</map>

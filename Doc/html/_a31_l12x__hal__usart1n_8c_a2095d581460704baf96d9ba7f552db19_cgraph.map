@@ -1,0 +1,8 @@
+<map id="HAL_USART_Init" name="HAL_USART_Init">
+<area shape="rect" id="node1" title="Initialize the USART1n peripheral with the specified parameters." alt="" coords="5,137,127,163"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scu_8h.html#a7d0a497cdf6bc58ed14a54aed75a04ec" title="Set Each Peripheral Clock." alt="" coords="189,5,336,47"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__scu_8h.html#a86f85811c7a32616b6f21328fa2d868f" title="Set/Reset Each Peripheral Block Reset of PPRST2 Register." alt="" coords="189,71,336,112"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__usart1n_8c.html#a681990d5d29756daab5623c2174312a3" title="Clear Status register in USART peripheral." alt="" coords="177,137,349,163"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__usart1n_8c.html#a9b721e5c333cc14936939abebd9e88ea" title="Receive a single data from USART peripheral." alt="" coords="175,187,351,214"/>
+<area shape="rect" id="node6" href="$_a31_l12x__hal__usart1n_8c.html#a208e897ee9cfa68e0e5feacdfc967555" title="Determines best dividers to get a target clock rate." alt="" coords="199,238,326,265"/>
+</map>

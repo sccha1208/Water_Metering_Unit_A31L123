@@ -1,0 +1,6 @@
+<map id="HAL_I2C_SlaveReceive_DMA" name="HAL_I2C_SlaveReceive_DMA">
+<area shape="rect" id="node1" title="Receive an array of bytes in Slave mode by DMA." alt="" coords="5,31,197,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__i2cn_8c.html#a93b983df75e1ac7e2870e55b918d9f30" title="Receive and Transmit data in slave mode by DMA." alt="" coords="245,31,465,57"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__dmacn_8h.html#aed27eb8ff1494f44b94c8ed749f6a010" title="Enable the transfer." alt="" coords="513,5,647,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__i2cn_8c.html#a15e9a4755791cd7daaeb8025b47d4076" title="wait and return status in slave mode" alt="" coords="535,56,625,83"/>
+</map>

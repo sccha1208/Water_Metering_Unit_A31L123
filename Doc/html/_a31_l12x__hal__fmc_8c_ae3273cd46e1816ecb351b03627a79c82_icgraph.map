@@ -1,0 +1,6 @@
+<map id="HAL_FMC_FlashEntry" name="HAL_FMC_FlashEntry">
+<area shape="rect" id="node1" title="Entry of Flash Memory Control." alt="" coords="207,56,359,83"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__fmc_8c.html#afecfcf9e9af4c487d2372387312e5d67" title="Flash Bulk(Chip) Erase Function." alt="" coords="7,5,157,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__fmc_8c.html#acbef36e2ac9437bd006e86722fa51441" title="Flash Page Erase Function." alt="" coords="5,56,159,83"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__fmc_8c.html#a713d9e992681eaf9ebfa49287c996af1" title="Flash Page Write Function." alt="" coords="7,107,157,133"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="HAL_COMP_Init" name="HAL_COMP_Init">
+<area shape="rect" id="node1" title="Initialize the target peripheral." alt="" coords="5,46,123,73"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scu_8h.html#a7d0a497cdf6bc58ed14a54aed75a04ec" title="Set Each Peripheral Clock." alt="" coords="171,5,317,47"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__scu_8h.html#a86f85811c7a32616b6f21328fa2d868f" title="Set/Reset Each Peripheral Block Reset of PPRST2 Register." alt="" coords="171,71,317,112"/>
+</map>

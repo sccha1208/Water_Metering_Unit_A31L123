@@ -1,0 +1,4 @@
+<map id="HAL_USART_Receive" name="HAL_USART_Receive">
+<area shape="rect" id="node1" title="Receive a block of data via USART peripheral." alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__usart1n_8c.html#a9b721e5c333cc14936939abebd9e88ea" title="Receive a single data from USART peripheral." alt="" coords="203,5,379,32"/>
+</map>

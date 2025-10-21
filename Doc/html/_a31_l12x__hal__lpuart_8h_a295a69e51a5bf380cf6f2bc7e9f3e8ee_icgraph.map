@@ -1,0 +1,4 @@
+<map id="HAL_LPUART_ClearStatus" name="HAL_LPUART_ClearStatus">
+<area shape="rect" id="node1" title="This function clears Interrupt Flag and Status Register." alt="" coords="215,5,393,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__lpuart_8c.html#af69e0bf603071add241452aef072215d" title="Send a block of data via LPUART peripheral." alt="" coords="5,5,167,32"/>
+</map>

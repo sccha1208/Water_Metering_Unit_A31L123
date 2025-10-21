@@ -1,0 +1,19 @@
+--cpu Cortex-M0+
+".\objects\system_a31l12x.o"
+".\objects\a31l12x_it.o"
+".\objects\a31l12x_portinit.o"
+".\objects\a31l12x_systemclock.o"
+".\objects\main.o"
+".\objects\meter_protocol.o"
+".\objects\startup_a31l12x.o"
+".\objects\option_a31l12x.o"
+".\objects\a31l12x_hal_intc.o"
+".\objects\a31l12x_hal_lpuart.o"
+".\objects\a31l12x_hal_pcu.o"
+".\objects\a31l12x_hal_scu.o"
+".\objects\a31l12x_hal_uartn.o"
+".\objects\a31l12x_hal_debug_frmwrk.o"
+--strict --scatter ".\Objects\LPUART_Interrupt.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\LPUART_Interrupt.map" -o .\Objects\LPUART_Interrupt.axf

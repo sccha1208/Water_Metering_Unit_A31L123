@@ -1,0 +1,6 @@
+<map id="HAL_I2C_SlaveTransferData" name="HAL_I2C_SlaveTransferData">
+<area shape="rect" id="node1" title="Receive and Transmit data in slave mode." alt="" coords="5,56,189,83"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__i2cn_8c.html#a133ae17b04b34797ec747141b0a4d4e9" title="Enable/Disable interrupt for I2C peripheral." alt="" coords="237,5,400,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__i2cn_8c.html#afd408e2448333d4efa4b237c73a8cfcb" title="Convert from I2C peripheral to number." alt="" coords="269,56,369,83"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__i2cn_8c.html#a15e9a4755791cd7daaeb8025b47d4076" title="wait and return status in slave mode" alt="" coords="273,107,364,133"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="HAL_SPIn_Init" name="HAL_SPIn_Init">
+<area shape="rect" id="node1" title="Initialize the SPIn peripheral with the specified parameters." alt="" coords="5,107,112,134"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__scu_8h.html#a7d0a497cdf6bc58ed14a54aed75a04ec" title="Set Each Peripheral Clock." alt="" coords="160,5,307,47"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__scu_8h.html#a86f85811c7a32616b6f21328fa2d868f" title="Set/Reset Each Peripheral Block Reset of PPRST2 Register." alt="" coords="160,71,307,112"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__spin_8c.html#a0c02940d1f27f3885335c801f8f10e20" title="Determines best dividers to get a target clock rate." alt="" coords="176,137,291,163"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__spin_8c.html#a76eee117c3b930aef8d5928519439334" title="Receive a single data from SPIn peripheral." alt="" coords="169,187,298,214"/>
+</map>

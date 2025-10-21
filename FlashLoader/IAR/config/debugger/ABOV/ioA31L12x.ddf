@@ -1,0 +1,5 @@
+[Sfr]
+;     Name                        Zone      Address     Bytesize  Displaybase Bitrange
+;     ----                        ----      -------     --------  ----------- --------
+sfr = "FMCR",                     "Memory", 0x40001B0C, 4,        base=16
+

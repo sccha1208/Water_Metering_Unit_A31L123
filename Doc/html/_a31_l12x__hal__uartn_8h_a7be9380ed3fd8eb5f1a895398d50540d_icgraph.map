@@ -1,0 +1,4 @@
+<map id="HAL_UART_CheckBusy" name="HAL_UART_CheckBusy">
+<area shape="rect" id="node1" title="Check whether if UART is busy or not." alt="" coords="104,5,267,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#abac7707b6be5733e890091048fcb99a2" title="Puts a character to file." alt="" coords="5,5,56,32"/>
+</map>

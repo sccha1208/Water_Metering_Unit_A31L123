@@ -1,0 +1,5 @@
+<map id="fputc" name="fputc">
+<area shape="rect" id="node1" title="Puts a character to file." alt="" coords="5,31,56,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__uartn_8h.html#a7be9380ed3fd8eb5f1a895398d50540d" title="Check whether if UART is busy or not." alt="" coords="109,5,271,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__uartn_8h.html#aa7dfea0108c5ea92d4bc9f5c79ef9e4d" title="Transmit a single data through UART peripheral." alt="" coords="104,56,276,83"/>
+</map>

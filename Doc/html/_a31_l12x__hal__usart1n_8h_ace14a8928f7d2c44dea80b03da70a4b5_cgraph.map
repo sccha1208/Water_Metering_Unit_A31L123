@@ -1,0 +1,5 @@
+<map id="HAL_USART_Transmit" name="HAL_USART_Transmit">
+<area shape="rect" id="node1" title="Send a block of data via USART peripheral." alt="" coords="5,31,160,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__usart1n_8c.html#a681990d5d29756daab5623c2174312a3" title="Clear Status register in USART peripheral." alt="" coords="213,5,385,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__usart1n_8c.html#a92e6ffa29854e6b3777567d2cfc29a3d" title="Transmit a single data through USART peripheral." alt="" coords="208,56,389,83"/>
+</map>

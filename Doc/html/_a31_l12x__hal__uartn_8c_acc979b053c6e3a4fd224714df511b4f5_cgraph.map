@@ -1,0 +1,4 @@
+<map id="HAL_UART_Receive" name="HAL_UART_Receive">
+<area shape="rect" id="node1" title="Receive a block of data via UART peripheral." alt="" coords="5,5,145,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__uartn_8c.html#aea7d60af1ecdb767452af416422e3446" title="Receive a single data from UART peripheral." alt="" coords="193,5,360,32"/>
+</map>

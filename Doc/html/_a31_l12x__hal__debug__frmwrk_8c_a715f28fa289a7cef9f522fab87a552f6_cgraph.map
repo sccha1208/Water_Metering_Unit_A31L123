@@ -1,0 +1,9 @@
+<map id="getstring" name="getstring">
+<area shape="rect" id="node1" title="Get a character to UART port." alt="" coords="5,31,77,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#ab5682425a8b9f9fd4290e303f3fd500b" title="Get a character to UART port." alt="" coords="125,5,229,32"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a7e7f61fa79d52e2ba38085032eab8f5f" title="Puts a character to UART port." alt="" coords="126,56,229,83"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__uartn_8h.html#acc979b053c6e3a4fd224714df511b4f5" title="Receive a block of data via UART peripheral." alt="" coords="280,5,420,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__uartn_8c.html#aea7d60af1ecdb767452af416422e3446" title="Receive a single data from UART peripheral." alt="" coords="473,5,640,32"/>
+<area shape="rect" id="node6" href="$_a31_l12x__hal__uartn_8h.html#ab1488eccbac797387079ab39be51ac38" title="Send a block of data via UART peripheral." alt="" coords="277,56,423,83"/>
+<area shape="rect" id="node7" href="$_a31_l12x__hal__uartn_8c.html#aa7dfea0108c5ea92d4bc9f5c79ef9e4d" title="Transmit a single data through UART peripheral." alt="" coords="471,56,643,83"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="HAL_SCU_Peripheral_SetReset2" name="HAL_SCU_Peripheral_SetReset2">
+<area shape="rect" id="node1" title="Set/Reset Each Peripheral Block Reset of PPRST2 Register." alt="" coords="197,327,344,369"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__cmpn_8c.html#adcd4367d51e8286761860d4b87db10ea" title="Deinitialize the target peripheral." alt="" coords="11,5,144,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__cmpn_8c.html#a8d622095197a0a59f8e312f120559ddf" title="Initialize the target peripheral." alt="" coords="19,56,136,83"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__crc_8c.html#af98d877f2e3390ed7b10cc57ba4abfd6" title="DeInitialize CRC peripheral." alt="" coords="17,107,138,133"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__i2cn_8c.html#a5b9c2837a1a18e967114ad41ade4a830" title="Initialize the I2Cn peripheral with the specified parameters." alt="" coords="29,157,126,184"/>
+<area shape="rect" id="node6" href="$_a31_l12x__hal__lpuart_8c.html#aa0ff7425ce3e68e1a2c574b8820022dd" title="Deinitialize the LPUART peripheral registers to their default reset values." alt="" coords="5,208,149,235"/>
+<area shape="rect" id="node7" href="$_a31_l12x__hal__lpuart_8c.html#a4842723facd9651d1445256c52d0df7f" title="Initialize the LPUART peripheral with the specified parameters." alt="" coords="13,259,141,285"/>
+<area shape="rect" id="node8" href="$_a31_l12x__hal__rtcc_8c.html#a299bf6ca2cbe263d92e981299694bcec" title="Close RTCC." alt="" coords="13,309,141,336"/>
+<area shape="rect" id="node9" href="$_a31_l12x__hal__scn_8c.html#a77892ea94b0cde94c395afd6461ddfbf" title="Deinitialize the SCn peripheral registers to their default reset values." alt="" coords="21,360,133,387"/>
+<area shape="rect" id="node10" href="$_a31_l12x__hal__scn_8c.html#ab3874bdeb76d2ee4368e18e8bcb2816f" title="Initialize the SCn peripheral with the specified parameters." alt="" coords="29,411,125,437"/>
+<area shape="rect" id="node11" href="$_a31_l12x__hal__spin_8c.html#aa04293967566099d8ae083b36b82f644" title="Initialize the SPIn peripheral with the specified parameters." alt="" coords="24,461,131,488"/>
+<area shape="rect" id="node12" href="$_a31_l12x__hal__uartn_8c.html#a6d12dc7f5d3ca7341d77a9526d33f88a" title="Deinitialize the UARTn peripheral registers to their default reset values." alt="" coords="13,512,141,539"/>
+<area shape="rect" id="node13" href="$_a31_l12x__hal__usart1n_8c.html#a4633ef2cbe207a5af1ff23eac3852cad" title="Deinitialize the USART1n peripheral registers to their default reset values." alt="" coords="9,563,146,589"/>
+<area shape="rect" id="node14" href="$_a31_l12x__hal__usart1n_8c.html#a2095d581460704baf96d9ba7f552db19" title="Initialize the USART1n peripheral with the specified parameters." alt="" coords="17,613,138,640"/>
+<area shape="rect" id="node15" href="$_a31_l12x__hal__spin_8c.html#a6d7dc13e38ad6bf1735a99d7b9322316" title="Deinitialize the SPIn peripheral registers to their default reset values." alt="" coords="32,664,123,691"/>
+</map>

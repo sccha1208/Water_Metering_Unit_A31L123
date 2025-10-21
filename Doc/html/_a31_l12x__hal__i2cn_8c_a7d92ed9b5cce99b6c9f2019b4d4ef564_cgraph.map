@@ -1,0 +1,4 @@
+<map id="HAL_I2C_Slave_GetState" name="HAL_I2C_Slave_GetState">
+<area shape="rect" id="node1" title="Get Status of Slave Transfer." alt="" coords="5,5,176,32"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__i2cn_8c.html#afd408e2448333d4efa4b237c73a8cfcb" title="Convert from I2C peripheral to number." alt="" coords="224,5,324,32"/>
+</map>

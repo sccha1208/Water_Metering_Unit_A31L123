@@ -1,0 +1,10 @@
+<map id="HAL_I2C_ConfigInterrupt" name="HAL_I2C_ConfigInterrupt">
+<area shape="rect" id="node1" title="Enable/Disable interrupt for I2C peripheral." alt="" coords="489,81,652,108"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__i2cn_8c.html#a997e1b14b90248312484d6db6b996be2" title="General Master Interrupt handler for I2C peripheral." alt="" coords="231,5,441,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__i2cn_8c.html#aedbb9343dec1237085f9e9f1bc1a033d" title="Transmit and Receive data in master mode." alt="" coords="239,56,433,83"/>
+<area shape="rect" id="node6" href="$_a31_l12x__hal__i2cn_8c.html#a258913a76d2e16cf5a7578b90b1cbbe9" title="General Slave Interrupt handler for I2C peripheral." alt="" coords="235,107,437,133"/>
+<area shape="rect" id="node7" href="$_a31_l12x__hal__i2cn_8c.html#a230a36cb1065e9502cb7c0a75ec540a9" title="Receive and Transmit data in slave mode." alt="" coords="244,157,428,184"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__i2cn_8c.html#a337d999754c0228153031bd7c5b8e373" title="Receive an array of bytes in Master mode." alt="" coords="8,31,180,57"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__i2cn_8c.html#a4a5a63c71ed30b538bdbf7ca49e3f594" title="Transmit an array of bytes in Master mode." alt="" coords="5,81,183,108"/>
+<area shape="rect" id="node8" href="$_a31_l12x__hal__i2cn_8c.html#a3dc78fb232224d8f587b15377b8e1a17" title="Receive an array of bytes in Slave mode." alt="" coords="13,157,175,184"/>
+</map>

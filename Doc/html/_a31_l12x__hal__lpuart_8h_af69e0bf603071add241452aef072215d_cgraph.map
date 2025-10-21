@@ -1,0 +1,5 @@
+<map id="HAL_LPUART_Transmit" name="HAL_LPUART_Transmit">
+<area shape="rect" id="node1" title="Send a block of data via LPUART peripheral." alt="" coords="5,31,167,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__lpuart_8c.html#a295a69e51a5bf380cf6f2bc7e9f3e8ee" title="This function clears Interrupt Flag and Status Register." alt="" coords="219,5,398,32"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__lpuart_8c.html#aaf73affb624f8363d0a9ed8d8327efe2" title="Transmit a single data through USART peripheral." alt="" coords="215,56,403,83"/>
+</map>

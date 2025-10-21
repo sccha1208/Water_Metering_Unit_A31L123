@@ -1,0 +1,14 @@
+<map id="HAL_UART_Transmit" name="HAL_UART_Transmit">
+<area shape="rect" id="node1" title="Send a block of data via UART peripheral." alt="" coords="653,183,799,210"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a7e7f61fa79d52e2ba38085032eab8f5f" title="Puts a character to UART port." alt="" coords="503,183,605,210"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__debug__frmwrk_8c.html#aa79ebfdcc65f8acaa847e9deaecea5a0" title="Initializes Debug Framework through initializing UARTn." alt="" coords="5,234,132,260"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a715f28fa289a7cef9f522fab87a552f6" title="Get a character to UART port." alt="" coords="362,31,434,58"/>
+<area shape="rect" id="node5" href="$_a31_l12x__hal__debug__frmwrk_8c.html#af53fccf7d1c29be5d91a42179acda532" title="Puts a decimal number to UART port." alt="" coords="187,82,286,108"/>
+<area shape="rect" id="node6" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a19c2305345c7e4ff9fd9e9d7a414a4fa" title="Puts a decimal number to UART port." alt="" coords="180,132,293,159"/>
+<area shape="rect" id="node7" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a45d2869a186284d1c1cd512f26c2b323" title="Puts a decimal number to UART port." alt="" coords="180,183,293,210"/>
+<area shape="rect" id="node8" href="$_a31_l12x__hal__debug__frmwrk_8c.html#ac1245c6492715aa180414d0c36607b59" title="Puts a hex number to UART port." alt="" coords="187,234,286,260"/>
+<area shape="rect" id="node9" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a59a45f0886f0936bec188751583512d6" title="Puts a hex number to UART port." alt="" coords="341,284,455,311"/>
+<area shape="rect" id="node10" href="$_a31_l12x__hal__debug__frmwrk_8c.html#ad021b25a594b3e9130884c75615aafa2" title="Puts a hex number to UART port." alt="" coords="341,335,455,362"/>
+<area shape="rect" id="node11" href="$_a31_l12x__hal__debug__frmwrk_8c.html#afb44a3a4c42d7f28a82882213d38a0b9" title="Puts a string to UART port." alt="" coords="357,386,439,412"/>
+<area shape="rect" id="node12" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a4948fa615b0a307158db94b71b37801b" title="Puts a string to UART port and print new line." alt="" coords="191,436,282,463"/>
+</map>

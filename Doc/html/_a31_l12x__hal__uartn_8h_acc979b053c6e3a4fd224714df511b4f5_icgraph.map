@@ -1,0 +1,6 @@
+<map id="HAL_UART_Receive" name="HAL_UART_Receive">
+<area shape="rect" id="node1" title="Receive a block of data via UART peripheral." alt="" coords="332,31,472,57"/>
+<area shape="rect" id="node2" href="$_a31_l12x__hal__debug__frmwrk_8c.html#ab5682425a8b9f9fd4290e303f3fd500b" title="Get a character to UART port." alt="" coords="180,31,284,57"/>
+<area shape="rect" id="node3" href="$_a31_l12x__hal__debug__frmwrk_8c.html#aa79ebfdcc65f8acaa847e9deaecea5a0" title="Initializes Debug Framework through initializing UARTn." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node4" href="$_a31_l12x__hal__debug__frmwrk_8c.html#a715f28fa289a7cef9f522fab87a552f6" title="Get a character to UART port." alt="" coords="33,56,105,83"/>
+</map>
