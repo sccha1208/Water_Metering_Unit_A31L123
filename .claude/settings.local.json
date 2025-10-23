@@ -16,26 +16,6 @@
   },
   "outputStyle": "firmware-core-analysis-ko",
   "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "git add {{file_path}} && git commit -m \"Auto-commit: Updated {{file_path}} via Claude Code\" || echo \"No changes to commit\""
-          }
-        ]
-      },
-      {
-        "matcher": "Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "git add {{file_path}} && git commit -m \"Auto-commit: Edited {{file_path}} via Claude Code\" || echo \"No changes to commit\""
-          }
-        ]
-      }
-    ],
     "Stop": [
       {
         "hooks": [
