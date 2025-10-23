@@ -21,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -Command \"Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Claude 작업이 완료되었습니다!\\n\\n', 'OK', 'Information')\""
+            "command": "powershell -Command \"Write-Host '=== Claude 작업 완료 ===' -ForegroundColor Green\""
           }
         ]
       }
