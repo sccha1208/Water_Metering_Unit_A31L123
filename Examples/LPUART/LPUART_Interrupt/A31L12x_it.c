@@ -15,6 +15,7 @@
 
 
 #include "main_conf.h"
+#include "meter_protocol.h"
 
 /* Private typedef ---------------------------------------------------------- */
 /* Private define ----------------------------------------------------------- */
@@ -72,9 +73,12 @@ void PendSV_Handler( void )
  * @brief         This function handles SysTick Handler.
  * @param         None
  * @return        None
+ * @details       1ms마다 호출되어 시스템 틱 카운터 증가
  *//*-------------------------------------------------------------------------*/
 void SysTick_Handler( void )
 {
+    // Meter 프로토콜 타임아웃을 위한 밀리초 카운터 증가
+    Meter_SysTick_Increment();
 }
 
 /******************************************************************************/

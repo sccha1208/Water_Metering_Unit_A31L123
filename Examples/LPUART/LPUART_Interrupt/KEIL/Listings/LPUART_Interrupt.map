@@ -14,6 +14,8 @@ Section Cross References
     a31l12x_systemclock.o(i.SystemClock_Config) refers to a31l12x_hal_scu.o(i.HAL_SCU_ClockMonitoring) for HAL_SCU_ClockMonitoring
     a31l12x_systemclock.o(i.SystemClock_Config) refers to system_a31l12x.o(.data) for SystemCoreClock
     main.o(i.DEBUG_Init) refers to a31l12x_hal_debug_frmwrk.o(i.debug_frmwrk_init) for debug_frmwrk_init
+    main.o(i.DEBUG_Init) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    main.o(i.DEBUG_Init) refers to a31l12x_hal_debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
     main.o(i.DEBUG_MenuPrint) refers to main.o(.constdata) for menu
     main.o(i.DEBUG_MenuPrint) refers to a31l12x_hal_debug_frmwrk.o(.data) for _db_msg
     main.o(i.IntReceive) refers to a31l12x_hal_lpuart.o(i.HAL_LPUART_Receive) for HAL_LPUART_Receive
@@ -773,85 +775,85 @@ Image Symbol Table
     .text                                    0x0000044c   Section        0  sys_exit.o(.text)
     .text                                    0x00000458   Section        2  use_no_semi.o(.text)
     .text                                    0x0000045a   Section        0  indicate_semi.o(.text)
-    i.DEBUG_Init                             0x0000045a   Section        0  main.o(i.DEBUG_Init)
-    i.DEBUG_MenuPrint                        0x00000464   Section        0  main.o(i.DEBUG_MenuPrint)
-    i.HAL_GPIO_ConfigFunction                0x00000480   Section        0  a31l12x_hal_pcu.o(i.HAL_GPIO_ConfigFunction)
-    i.HAL_GPIO_ConfigOutput                  0x000004c4   Section        0  a31l12x_hal_pcu.o(i.HAL_GPIO_ConfigOutput)
-    i.HAL_INT_EInt_MaskDisable               0x0000050c   Section        0  a31l12x_hal_intc.o(i.HAL_INT_EInt_MaskDisable)
-    i.HAL_LPUART_ClearStatus                 0x0000051c   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_ClearStatus)
-    i.HAL_LPUART_ConfigInterrupt             0x00000588   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_ConfigInterrupt)
-    i.HAL_LPUART_ConfigStructInit            0x000005d8   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_ConfigStructInit)
-    i.HAL_LPUART_Enable                      0x00000604   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_Enable)
-    i.HAL_LPUART_GetStatus                   0x00000620   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_GetStatus)
-    i.HAL_LPUART_Init                        0x0000062c   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_Init)
-    i.HAL_LPUART_Receive                     0x0000067c   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_Receive)
-    i.HAL_LPUART_ReceiveByte                 0x000006f0   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_ReceiveByte)
-    i.HAL_LPUART_Transmit                    0x000006fc   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_Transmit)
-    i.HAL_LPUART_TransmitByte                0x00000774   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_TransmitByte)
-    i.HAL_SCU_ClockMonitoring                0x00000784   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_ClockMonitoring)
-    i.HAL_SCU_ClockSource_Disable            0x000007c0   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_ClockSource_Disable)
-    i.HAL_SCU_ClockSource_Enable             0x000007e0   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_ClockSource_Enable)
-    i.HAL_SCU_Peripheral_ClockConfig         0x00000804   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_ClockConfig)
-    i.HAL_SCU_Peripheral_ClockSelection      0x00000810   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_ClockSelection)
-    i.HAL_SCU_Peripheral_EnableClock2        0x00000828   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_EnableClock2)
-    i.HAL_SCU_Peripheral_SetReset2           0x00000848   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_SetReset2)
-    i.HAL_SCU_SystemClockChange              0x00000864   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_SystemClockChange)
-    i.HAL_SCU_SystemClockDivider             0x00000878   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_SystemClockDivider)
-    i.HAL_UART_ConfigStructInit              0x00000884   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_ConfigStructInit)
-    i.HAL_UART_Init                          0x000008a4   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_Init)
-    i.HAL_UART_Receive                       0x000009a8   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_Receive)
-    i.HAL_UART_ReceiveByte                   0x00000a1c   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_ReceiveByte)
-    i.HAL_UART_Transmit                      0x00000a24   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_Transmit)
-    i.HAL_UART_TransmitByte                  0x00000aa4   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_TransmitByte)
-    i.HardFault_Handler                      0x00000ab4   Section        0  a31l12x_it.o(i.HardFault_Handler)
-    i.IntReceive                             0x00000ab8   Section        0  main.o(i.IntReceive)
-    i.IntTransmit                            0x00000b0c   Section        0  main.o(i.IntTransmit)
-    i.LPUART_Configure                       0x00000b90   Section        0  main.o(i.LPUART_Configure)
-    i.LPUART_Handler                         0x00000d20   Section        0  a31l12x_it.o(i.LPUART_Handler)
-    i.LPUART_IRQHandler_IT                   0x00000d28   Section        0  main.o(i.LPUART_IRQHandler_IT)
-    i.LPUART_InterruptRun                    0x00000d4c   Section        0  main.o(i.LPUART_InterruptRun)
-    i.Meter_CalculateChecksum                0x00000ea8   Section        0  meter_protocol.o(i.Meter_CalculateChecksum)
-    i.Meter_GetTick                          0x00000ec4   Section        0  meter_protocol.o(i.Meter_GetTick)
-    Meter_GetTick                            0x00000ec5   Thumb Code    16  meter_protocol.o(i.Meter_GetTick)
-    i.Meter_Init                             0x00000ed8   Section        0  meter_protocol.o(i.Meter_Init)
-    i.Meter_ProcessReceive                   0x00000ef4   Section        0  meter_protocol.o(i.Meter_ProcessReceive)
-    i.Meter_SendCommand                      0x00000fd0   Section        0  meter_protocol.o(i.Meter_SendCommand)
-    i.Meter_SendPreamble                     0x0000110c   Section        0  meter_protocol.o(i.Meter_SendPreamble)
-    i.Meter_SetErrorCallback                 0x0000112c   Section        0  meter_protocol.o(i.Meter_SetErrorCallback)
-    i.Meter_SetResponseCallback              0x00001138   Section        0  meter_protocol.o(i.Meter_SetResponseCallback)
-    i.Meter_Task                             0x00001144   Section        0  meter_protocol.o(i.Meter_Task)
-    i.NMI_Handler                            0x000011b8   Section        0  a31l12x_it.o(i.NMI_Handler)
-    i.OnMeterError                           0x000011bc   Section        0  main.o(i.OnMeterError)
-    i.OnMeterResponseReceived                0x000012a0   Section        0  main.o(i.OnMeterResponseReceived)
-    i.PendSV_Handler                         0x00001590   Section        0  a31l12x_it.o(i.PendSV_Handler)
-    i.Port_Init                              0x00001594   Section        0  a31l12x_portinit.o(i.Port_Init)
-    i.SVC_Handler                            0x0000163c   Section        0  a31l12x_it.o(i.SVC_Handler)
-    i.SysTick_Handler                        0x0000163e   Section        0  a31l12x_it.o(i.SysTick_Handler)
-    i.SystemClock_Config                     0x00001640   Section        0  a31l12x_systemclock.o(i.SystemClock_Config)
-    i.SystemInit                             0x0000168c   Section        0  system_a31l12x.o(i.SystemInit)
-    i.UARTGetCh                              0x000016b0   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTGetCh)
-    i.UARTGetChar                            0x000016d0   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTGetChar)
-    i.UARTPutChar                            0x000016ea   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutChar)
-    i.UARTPutDec                             0x000016fc   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec)
-    i.UARTPutDec16                           0x00001758   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec16)
-    i.UARTPutDec32                           0x00001800   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec32)
-    i.UARTPutHex                             0x00001948   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex)
-    i.UARTPutHex16                           0x0000197e   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex16)
-    i.UARTPutHex32                           0x000019b4   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex32)
-    i.UARTPuts                               0x000019ea   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPuts)
-    i.UARTPuts_                              0x00001a08   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPuts_)
-    i.__ARM_common_switch8                   0x00001a24   Section        0  main.o(i.__ARM_common_switch8)
-    i.__NVIC_SetPriority                     0x00001a40   Section        0  main.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x00001a41   Thumb Code   110  main.o(i.__NVIC_SetPriority)
-    i.debug_frmwrk_init                      0x00001ab8   Section        0  a31l12x_hal_debug_frmwrk.o(i.debug_frmwrk_init)
-    i.lpuart_set_divisors                    0x00001b9c   Section        0  a31l12x_hal_lpuart.o(i.lpuart_set_divisors)
-    lpuart_set_divisors                      0x00001b9d   Thumb Code    68  a31l12x_hal_lpuart.o(i.lpuart_set_divisors)
-    i.main                                   0x00001be4   Section        0  main.o(i.main)
-    i.mainloop                               0x00001bf4   Section        0  main.o(i.mainloop)
-    i.rbReceive                              0x00001c1c   Section        0  main.o(i.rbReceive)
-    i.uart_set_divisors                      0x00001c78   Section        0  a31l12x_hal_uartn.o(i.uart_set_divisors)
-    uart_set_divisors                        0x00001c79   Thumb Code    60  a31l12x_hal_uartn.o(i.uart_set_divisors)
-    .constdata                               0x00001cb8   Section      403  main.o(.constdata)
+    i.DEBUG_Init                             0x0000045c   Section        0  main.o(i.DEBUG_Init)
+    i.DEBUG_MenuPrint                        0x000004bc   Section        0  main.o(i.DEBUG_MenuPrint)
+    i.HAL_GPIO_ConfigFunction                0x000004d8   Section        0  a31l12x_hal_pcu.o(i.HAL_GPIO_ConfigFunction)
+    i.HAL_GPIO_ConfigOutput                  0x0000051c   Section        0  a31l12x_hal_pcu.o(i.HAL_GPIO_ConfigOutput)
+    i.HAL_INT_EInt_MaskDisable               0x00000564   Section        0  a31l12x_hal_intc.o(i.HAL_INT_EInt_MaskDisable)
+    i.HAL_LPUART_ClearStatus                 0x00000574   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_ClearStatus)
+    i.HAL_LPUART_ConfigInterrupt             0x000005e0   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_ConfigInterrupt)
+    i.HAL_LPUART_ConfigStructInit            0x00000630   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_ConfigStructInit)
+    i.HAL_LPUART_Enable                      0x0000065c   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_Enable)
+    i.HAL_LPUART_GetStatus                   0x00000678   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_GetStatus)
+    i.HAL_LPUART_Init                        0x00000684   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_Init)
+    i.HAL_LPUART_Receive                     0x000006d4   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_Receive)
+    i.HAL_LPUART_ReceiveByte                 0x00000748   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_ReceiveByte)
+    i.HAL_LPUART_Transmit                    0x00000754   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_Transmit)
+    i.HAL_LPUART_TransmitByte                0x000007cc   Section        0  a31l12x_hal_lpuart.o(i.HAL_LPUART_TransmitByte)
+    i.HAL_SCU_ClockMonitoring                0x000007dc   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_ClockMonitoring)
+    i.HAL_SCU_ClockSource_Disable            0x00000818   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_ClockSource_Disable)
+    i.HAL_SCU_ClockSource_Enable             0x00000838   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_ClockSource_Enable)
+    i.HAL_SCU_Peripheral_ClockConfig         0x0000085c   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_ClockConfig)
+    i.HAL_SCU_Peripheral_ClockSelection      0x00000868   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_ClockSelection)
+    i.HAL_SCU_Peripheral_EnableClock2        0x00000880   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_EnableClock2)
+    i.HAL_SCU_Peripheral_SetReset2           0x000008a0   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_SetReset2)
+    i.HAL_SCU_SystemClockChange              0x000008bc   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_SystemClockChange)
+    i.HAL_SCU_SystemClockDivider             0x000008d0   Section        0  a31l12x_hal_scu.o(i.HAL_SCU_SystemClockDivider)
+    i.HAL_UART_ConfigStructInit              0x000008dc   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_ConfigStructInit)
+    i.HAL_UART_Init                          0x000008fc   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_Init)
+    i.HAL_UART_Receive                       0x00000a00   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_Receive)
+    i.HAL_UART_ReceiveByte                   0x00000a74   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_ReceiveByte)
+    i.HAL_UART_Transmit                      0x00000a7c   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_Transmit)
+    i.HAL_UART_TransmitByte                  0x00000afc   Section        0  a31l12x_hal_uartn.o(i.HAL_UART_TransmitByte)
+    i.HardFault_Handler                      0x00000b0c   Section        0  a31l12x_it.o(i.HardFault_Handler)
+    i.IntReceive                             0x00000b10   Section        0  main.o(i.IntReceive)
+    i.IntTransmit                            0x00000b64   Section        0  main.o(i.IntTransmit)
+    i.LPUART_Configure                       0x00000be8   Section        0  main.o(i.LPUART_Configure)
+    i.LPUART_Handler                         0x00000d78   Section        0  a31l12x_it.o(i.LPUART_Handler)
+    i.LPUART_IRQHandler_IT                   0x00000d80   Section        0  main.o(i.LPUART_IRQHandler_IT)
+    i.LPUART_InterruptRun                    0x00000da4   Section        0  main.o(i.LPUART_InterruptRun)
+    i.Meter_CalculateChecksum                0x00000f00   Section        0  meter_protocol.o(i.Meter_CalculateChecksum)
+    i.Meter_GetTick                          0x00000f1c   Section        0  meter_protocol.o(i.Meter_GetTick)
+    Meter_GetTick                            0x00000f1d   Thumb Code    16  meter_protocol.o(i.Meter_GetTick)
+    i.Meter_Init                             0x00000f30   Section        0  meter_protocol.o(i.Meter_Init)
+    i.Meter_ProcessReceive                   0x00000f4c   Section        0  meter_protocol.o(i.Meter_ProcessReceive)
+    i.Meter_SendCommand                      0x00001028   Section        0  meter_protocol.o(i.Meter_SendCommand)
+    i.Meter_SendPreamble                     0x00001164   Section        0  meter_protocol.o(i.Meter_SendPreamble)
+    i.Meter_SetErrorCallback                 0x00001184   Section        0  meter_protocol.o(i.Meter_SetErrorCallback)
+    i.Meter_SetResponseCallback              0x00001190   Section        0  meter_protocol.o(i.Meter_SetResponseCallback)
+    i.Meter_Task                             0x0000119c   Section        0  meter_protocol.o(i.Meter_Task)
+    i.NMI_Handler                            0x00001210   Section        0  a31l12x_it.o(i.NMI_Handler)
+    i.OnMeterError                           0x00001214   Section        0  main.o(i.OnMeterError)
+    i.OnMeterResponseReceived                0x000012f8   Section        0  main.o(i.OnMeterResponseReceived)
+    i.PendSV_Handler                         0x000015e8   Section        0  a31l12x_it.o(i.PendSV_Handler)
+    i.Port_Init                              0x000015ec   Section        0  a31l12x_portinit.o(i.Port_Init)
+    i.SVC_Handler                            0x00001694   Section        0  a31l12x_it.o(i.SVC_Handler)
+    i.SysTick_Handler                        0x00001696   Section        0  a31l12x_it.o(i.SysTick_Handler)
+    i.SystemClock_Config                     0x00001698   Section        0  a31l12x_systemclock.o(i.SystemClock_Config)
+    i.SystemInit                             0x000016e4   Section        0  system_a31l12x.o(i.SystemInit)
+    i.UARTGetCh                              0x00001708   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTGetCh)
+    i.UARTGetChar                            0x00001728   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTGetChar)
+    i.UARTPutChar                            0x00001742   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutChar)
+    i.UARTPutDec                             0x00001754   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec)
+    i.UARTPutDec16                           0x000017b0   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec16)
+    i.UARTPutDec32                           0x00001858   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec32)
+    i.UARTPutHex                             0x000019a0   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex)
+    i.UARTPutHex16                           0x000019d6   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex16)
+    i.UARTPutHex32                           0x00001a0c   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex32)
+    i.UARTPuts                               0x00001a42   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPuts)
+    i.UARTPuts_                              0x00001a60   Section        0  a31l12x_hal_debug_frmwrk.o(i.UARTPuts_)
+    i.__ARM_common_switch8                   0x00001a7c   Section        0  main.o(i.__ARM_common_switch8)
+    i.__NVIC_SetPriority                     0x00001a98   Section        0  main.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x00001a99   Thumb Code   110  main.o(i.__NVIC_SetPriority)
+    i.debug_frmwrk_init                      0x00001b10   Section        0  a31l12x_hal_debug_frmwrk.o(i.debug_frmwrk_init)
+    i.lpuart_set_divisors                    0x00001bf4   Section        0  a31l12x_hal_lpuart.o(i.lpuart_set_divisors)
+    lpuart_set_divisors                      0x00001bf5   Thumb Code    68  a31l12x_hal_lpuart.o(i.lpuart_set_divisors)
+    i.main                                   0x00001c3c   Section        0  main.o(i.main)
+    i.mainloop                               0x00001c4c   Section        0  main.o(i.mainloop)
+    i.rbReceive                              0x00001c74   Section        0  main.o(i.rbReceive)
+    i.uart_set_divisors                      0x00001cd0   Section        0  a31l12x_hal_uartn.o(i.uart_set_divisors)
+    uart_set_divisors                        0x00001cd1   Thumb Code    60  a31l12x_hal_uartn.o(i.uart_set_divisors)
+    .constdata                               0x00001d10   Section      403  main.o(.constdata)
     .ARM.__AT_0x1FFFF200                     0x1ffff200   Section       68  option_a31l12x.o(.ARM.__AT_0x1FFFF200)
     .ARM.__AT_0x1FFFF400                     0x1ffff400   Section      128  option_a31l12x.o(.ARM.__AT_0x1FFFF400)
     .ARM.__AT_0x1FFFF600                     0x1ffff600   Section      128  option_a31l12x.o(.ARM.__AT_0x1FFFF600)
@@ -1023,80 +1025,80 @@ Image Symbol Table
     _sys_exit                                0x0000044d   Thumb Code     8  sys_exit.o(.text)
     __I$use$semihosting                      0x00000459   Thumb Code     0  use_no_semi.o(.text)
     __use_no_semihosting_swi                 0x00000459   Thumb Code     2  use_no_semi.o(.text)
-    DEBUG_Init                               0x0000045b   Thumb Code     8  main.o(i.DEBUG_Init)
     __semihosting_library_function           0x0000045b   Thumb Code     0  indicate_semi.o(.text)
-    DEBUG_MenuPrint                          0x00000465   Thumb Code    14  main.o(i.DEBUG_MenuPrint)
-    HAL_GPIO_ConfigFunction                  0x00000481   Thumb Code    68  a31l12x_hal_pcu.o(i.HAL_GPIO_ConfigFunction)
-    HAL_GPIO_ConfigOutput                    0x000004c5   Thumb Code    70  a31l12x_hal_pcu.o(i.HAL_GPIO_ConfigOutput)
-    HAL_INT_EInt_MaskDisable                 0x0000050d   Thumb Code    12  a31l12x_hal_intc.o(i.HAL_INT_EInt_MaskDisable)
-    HAL_LPUART_ClearStatus                   0x0000051d   Thumb Code   102  a31l12x_hal_lpuart.o(i.HAL_LPUART_ClearStatus)
-    HAL_LPUART_ConfigInterrupt               0x00000589   Thumb Code    76  a31l12x_hal_lpuart.o(i.HAL_LPUART_ConfigInterrupt)
-    HAL_LPUART_ConfigStructInit              0x000005d9   Thumb Code    40  a31l12x_hal_lpuart.o(i.HAL_LPUART_ConfigStructInit)
-    HAL_LPUART_Enable                        0x00000605   Thumb Code    24  a31l12x_hal_lpuart.o(i.HAL_LPUART_Enable)
-    HAL_LPUART_GetStatus                     0x00000621   Thumb Code     8  a31l12x_hal_lpuart.o(i.HAL_LPUART_GetStatus)
-    HAL_LPUART_Init                          0x0000062d   Thumb Code    74  a31l12x_hal_lpuart.o(i.HAL_LPUART_Init)
-    HAL_LPUART_Receive                       0x0000067d   Thumb Code   108  a31l12x_hal_lpuart.o(i.HAL_LPUART_Receive)
-    HAL_LPUART_ReceiveByte                   0x000006f1   Thumb Code     8  a31l12x_hal_lpuart.o(i.HAL_LPUART_ReceiveByte)
-    HAL_LPUART_Transmit                      0x000006fd   Thumb Code   110  a31l12x_hal_lpuart.o(i.HAL_LPUART_Transmit)
-    HAL_LPUART_TransmitByte                  0x00000775   Thumb Code    10  a31l12x_hal_lpuart.o(i.HAL_LPUART_TransmitByte)
-    HAL_SCU_ClockMonitoring                  0x00000785   Thumb Code    50  a31l12x_hal_scu.o(i.HAL_SCU_ClockMonitoring)
-    HAL_SCU_ClockSource_Disable              0x000007c1   Thumb Code    24  a31l12x_hal_scu.o(i.HAL_SCU_ClockSource_Disable)
-    HAL_SCU_ClockSource_Enable               0x000007e1   Thumb Code    22  a31l12x_hal_scu.o(i.HAL_SCU_ClockSource_Enable)
-    HAL_SCU_Peripheral_ClockConfig           0x00000805   Thumb Code     8  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_ClockConfig)
-    HAL_SCU_Peripheral_ClockSelection        0x00000811   Thumb Code    20  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_ClockSelection)
-    HAL_SCU_Peripheral_EnableClock2          0x00000829   Thumb Code    28  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_EnableClock2)
-    HAL_SCU_Peripheral_SetReset2             0x00000849   Thumb Code    24  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_SetReset2)
-    HAL_SCU_SystemClockChange                0x00000865   Thumb Code    10  a31l12x_hal_scu.o(i.HAL_SCU_SystemClockChange)
-    HAL_SCU_SystemClockDivider               0x00000879   Thumb Code     8  a31l12x_hal_scu.o(i.HAL_SCU_SystemClockDivider)
-    HAL_UART_ConfigStructInit                0x00000885   Thumb Code    30  a31l12x_hal_uartn.o(i.HAL_UART_ConfigStructInit)
-    HAL_UART_Init                            0x000008a5   Thumb Code   244  a31l12x_hal_uartn.o(i.HAL_UART_Init)
-    HAL_UART_Receive                         0x000009a9   Thumb Code   110  a31l12x_hal_uartn.o(i.HAL_UART_Receive)
-    HAL_UART_ReceiveByte                     0x00000a1d   Thumb Code     8  a31l12x_hal_uartn.o(i.HAL_UART_ReceiveByte)
-    HAL_UART_Transmit                        0x00000a25   Thumb Code   122  a31l12x_hal_uartn.o(i.HAL_UART_Transmit)
-    HAL_UART_TransmitByte                    0x00000aa5   Thumb Code    16  a31l12x_hal_uartn.o(i.HAL_UART_TransmitByte)
-    HardFault_Handler                        0x00000ab5   Thumb Code     4  a31l12x_it.o(i.HardFault_Handler)
-    IntReceive                               0x00000ab9   Thumb Code    78  main.o(i.IntReceive)
-    IntTransmit                              0x00000b0d   Thumb Code   124  main.o(i.IntTransmit)
-    LPUART_Configure                         0x00000b91   Thumb Code   292  main.o(i.LPUART_Configure)
-    LPUART_Handler                           0x00000d21   Thumb Code     8  a31l12x_it.o(i.LPUART_Handler)
-    LPUART_IRQHandler_IT                     0x00000d29   Thumb Code    34  main.o(i.LPUART_IRQHandler_IT)
-    LPUART_InterruptRun                      0x00000d4d   Thumb Code   142  main.o(i.LPUART_InterruptRun)
-    Meter_CalculateChecksum                  0x00000ea9   Thumb Code    26  meter_protocol.o(i.Meter_CalculateChecksum)
-    Meter_Init                               0x00000ed9   Thumb Code    22  meter_protocol.o(i.Meter_Init)
-    Meter_ProcessReceive                     0x00000ef5   Thumb Code   208  meter_protocol.o(i.Meter_ProcessReceive)
-    Meter_SendCommand                        0x00000fd1   Thumb Code   298  meter_protocol.o(i.Meter_SendCommand)
-    Meter_SendPreamble                       0x0000110d   Thumb Code    26  meter_protocol.o(i.Meter_SendPreamble)
-    Meter_SetErrorCallback                   0x0000112d   Thumb Code     6  meter_protocol.o(i.Meter_SetErrorCallback)
-    Meter_SetResponseCallback                0x00001139   Thumb Code     6  meter_protocol.o(i.Meter_SetResponseCallback)
-    Meter_Task                               0x00001145   Thumb Code   108  meter_protocol.o(i.Meter_Task)
-    NMI_Handler                              0x000011b9   Thumb Code     2  a31l12x_it.o(i.NMI_Handler)
-    OnMeterError                             0x000011bd   Thumb Code   104  main.o(i.OnMeterError)
-    OnMeterResponseReceived                  0x000012a1   Thumb Code   412  main.o(i.OnMeterResponseReceived)
-    PendSV_Handler                           0x00001591   Thumb Code     2  a31l12x_it.o(i.PendSV_Handler)
-    Port_Init                                0x00001595   Thumb Code   130  a31l12x_portinit.o(i.Port_Init)
-    SVC_Handler                              0x0000163d   Thumb Code     2  a31l12x_it.o(i.SVC_Handler)
-    SysTick_Handler                          0x0000163f   Thumb Code     2  a31l12x_it.o(i.SysTick_Handler)
-    SystemClock_Config                       0x00001641   Thumb Code    64  a31l12x_systemclock.o(i.SystemClock_Config)
-    SystemInit                               0x0000168d   Thumb Code    22  system_a31l12x.o(i.SystemInit)
-    UARTGetCh                                0x000016b1   Thumb Code    32  a31l12x_hal_debug_frmwrk.o(i.UARTGetCh)
-    UARTGetChar                              0x000016d1   Thumb Code    26  a31l12x_hal_debug_frmwrk.o(i.UARTGetChar)
-    UARTPutChar                              0x000016eb   Thumb Code    18  a31l12x_hal_debug_frmwrk.o(i.UARTPutChar)
-    UARTPutDec                               0x000016fd   Thumb Code    92  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec)
-    UARTPutDec16                             0x00001759   Thumb Code   162  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec16)
-    UARTPutDec32                             0x00001801   Thumb Code   304  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec32)
-    UARTPutHex                               0x00001949   Thumb Code    54  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex)
-    UARTPutHex16                             0x0000197f   Thumb Code    54  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex16)
-    UARTPutHex32                             0x000019b5   Thumb Code    54  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex32)
-    UARTPuts                                 0x000019eb   Thumb Code    28  a31l12x_hal_debug_frmwrk.o(i.UARTPuts)
-    UARTPuts_                                0x00001a09   Thumb Code    24  a31l12x_hal_debug_frmwrk.o(i.UARTPuts_)
-    __ARM_common_switch8                     0x00001a25   Thumb Code    28  main.o(i.__ARM_common_switch8)
-    debug_frmwrk_init                        0x00001ab9   Thumb Code   130  a31l12x_hal_debug_frmwrk.o(i.debug_frmwrk_init)
-    main                                     0x00001be5   Thumb Code    16  main.o(i.main)
-    mainloop                                 0x00001bf5   Thumb Code    36  main.o(i.mainloop)
-    rbReceive                                0x00001c1d   Thumb Code    88  main.o(i.rbReceive)
-    menu                                     0x00001cb8   Data         403  main.o(.constdata)
-    Region$$Table$$Base                      0x00001e4c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00001e6c   Number         0  anon$$obj.o(Region$$Table)
+    DEBUG_Init                               0x0000045d   Thumb Code    68  main.o(i.DEBUG_Init)
+    DEBUG_MenuPrint                          0x000004bd   Thumb Code    14  main.o(i.DEBUG_MenuPrint)
+    HAL_GPIO_ConfigFunction                  0x000004d9   Thumb Code    68  a31l12x_hal_pcu.o(i.HAL_GPIO_ConfigFunction)
+    HAL_GPIO_ConfigOutput                    0x0000051d   Thumb Code    70  a31l12x_hal_pcu.o(i.HAL_GPIO_ConfigOutput)
+    HAL_INT_EInt_MaskDisable                 0x00000565   Thumb Code    12  a31l12x_hal_intc.o(i.HAL_INT_EInt_MaskDisable)
+    HAL_LPUART_ClearStatus                   0x00000575   Thumb Code   102  a31l12x_hal_lpuart.o(i.HAL_LPUART_ClearStatus)
+    HAL_LPUART_ConfigInterrupt               0x000005e1   Thumb Code    76  a31l12x_hal_lpuart.o(i.HAL_LPUART_ConfigInterrupt)
+    HAL_LPUART_ConfigStructInit              0x00000631   Thumb Code    40  a31l12x_hal_lpuart.o(i.HAL_LPUART_ConfigStructInit)
+    HAL_LPUART_Enable                        0x0000065d   Thumb Code    24  a31l12x_hal_lpuart.o(i.HAL_LPUART_Enable)
+    HAL_LPUART_GetStatus                     0x00000679   Thumb Code     8  a31l12x_hal_lpuart.o(i.HAL_LPUART_GetStatus)
+    HAL_LPUART_Init                          0x00000685   Thumb Code    74  a31l12x_hal_lpuart.o(i.HAL_LPUART_Init)
+    HAL_LPUART_Receive                       0x000006d5   Thumb Code   108  a31l12x_hal_lpuart.o(i.HAL_LPUART_Receive)
+    HAL_LPUART_ReceiveByte                   0x00000749   Thumb Code     8  a31l12x_hal_lpuart.o(i.HAL_LPUART_ReceiveByte)
+    HAL_LPUART_Transmit                      0x00000755   Thumb Code   110  a31l12x_hal_lpuart.o(i.HAL_LPUART_Transmit)
+    HAL_LPUART_TransmitByte                  0x000007cd   Thumb Code    10  a31l12x_hal_lpuart.o(i.HAL_LPUART_TransmitByte)
+    HAL_SCU_ClockMonitoring                  0x000007dd   Thumb Code    50  a31l12x_hal_scu.o(i.HAL_SCU_ClockMonitoring)
+    HAL_SCU_ClockSource_Disable              0x00000819   Thumb Code    24  a31l12x_hal_scu.o(i.HAL_SCU_ClockSource_Disable)
+    HAL_SCU_ClockSource_Enable               0x00000839   Thumb Code    22  a31l12x_hal_scu.o(i.HAL_SCU_ClockSource_Enable)
+    HAL_SCU_Peripheral_ClockConfig           0x0000085d   Thumb Code     8  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_ClockConfig)
+    HAL_SCU_Peripheral_ClockSelection        0x00000869   Thumb Code    20  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_ClockSelection)
+    HAL_SCU_Peripheral_EnableClock2          0x00000881   Thumb Code    28  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_EnableClock2)
+    HAL_SCU_Peripheral_SetReset2             0x000008a1   Thumb Code    24  a31l12x_hal_scu.o(i.HAL_SCU_Peripheral_SetReset2)
+    HAL_SCU_SystemClockChange                0x000008bd   Thumb Code    10  a31l12x_hal_scu.o(i.HAL_SCU_SystemClockChange)
+    HAL_SCU_SystemClockDivider               0x000008d1   Thumb Code     8  a31l12x_hal_scu.o(i.HAL_SCU_SystemClockDivider)
+    HAL_UART_ConfigStructInit                0x000008dd   Thumb Code    30  a31l12x_hal_uartn.o(i.HAL_UART_ConfigStructInit)
+    HAL_UART_Init                            0x000008fd   Thumb Code   244  a31l12x_hal_uartn.o(i.HAL_UART_Init)
+    HAL_UART_Receive                         0x00000a01   Thumb Code   110  a31l12x_hal_uartn.o(i.HAL_UART_Receive)
+    HAL_UART_ReceiveByte                     0x00000a75   Thumb Code     8  a31l12x_hal_uartn.o(i.HAL_UART_ReceiveByte)
+    HAL_UART_Transmit                        0x00000a7d   Thumb Code   122  a31l12x_hal_uartn.o(i.HAL_UART_Transmit)
+    HAL_UART_TransmitByte                    0x00000afd   Thumb Code    16  a31l12x_hal_uartn.o(i.HAL_UART_TransmitByte)
+    HardFault_Handler                        0x00000b0d   Thumb Code     4  a31l12x_it.o(i.HardFault_Handler)
+    IntReceive                               0x00000b11   Thumb Code    78  main.o(i.IntReceive)
+    IntTransmit                              0x00000b65   Thumb Code   124  main.o(i.IntTransmit)
+    LPUART_Configure                         0x00000be9   Thumb Code   292  main.o(i.LPUART_Configure)
+    LPUART_Handler                           0x00000d79   Thumb Code     8  a31l12x_it.o(i.LPUART_Handler)
+    LPUART_IRQHandler_IT                     0x00000d81   Thumb Code    34  main.o(i.LPUART_IRQHandler_IT)
+    LPUART_InterruptRun                      0x00000da5   Thumb Code   142  main.o(i.LPUART_InterruptRun)
+    Meter_CalculateChecksum                  0x00000f01   Thumb Code    26  meter_protocol.o(i.Meter_CalculateChecksum)
+    Meter_Init                               0x00000f31   Thumb Code    22  meter_protocol.o(i.Meter_Init)
+    Meter_ProcessReceive                     0x00000f4d   Thumb Code   208  meter_protocol.o(i.Meter_ProcessReceive)
+    Meter_SendCommand                        0x00001029   Thumb Code   298  meter_protocol.o(i.Meter_SendCommand)
+    Meter_SendPreamble                       0x00001165   Thumb Code    26  meter_protocol.o(i.Meter_SendPreamble)
+    Meter_SetErrorCallback                   0x00001185   Thumb Code     6  meter_protocol.o(i.Meter_SetErrorCallback)
+    Meter_SetResponseCallback                0x00001191   Thumb Code     6  meter_protocol.o(i.Meter_SetResponseCallback)
+    Meter_Task                               0x0000119d   Thumb Code   108  meter_protocol.o(i.Meter_Task)
+    NMI_Handler                              0x00001211   Thumb Code     2  a31l12x_it.o(i.NMI_Handler)
+    OnMeterError                             0x00001215   Thumb Code   104  main.o(i.OnMeterError)
+    OnMeterResponseReceived                  0x000012f9   Thumb Code   412  main.o(i.OnMeterResponseReceived)
+    PendSV_Handler                           0x000015e9   Thumb Code     2  a31l12x_it.o(i.PendSV_Handler)
+    Port_Init                                0x000015ed   Thumb Code   130  a31l12x_portinit.o(i.Port_Init)
+    SVC_Handler                              0x00001695   Thumb Code     2  a31l12x_it.o(i.SVC_Handler)
+    SysTick_Handler                          0x00001697   Thumb Code     2  a31l12x_it.o(i.SysTick_Handler)
+    SystemClock_Config                       0x00001699   Thumb Code    64  a31l12x_systemclock.o(i.SystemClock_Config)
+    SystemInit                               0x000016e5   Thumb Code    22  system_a31l12x.o(i.SystemInit)
+    UARTGetCh                                0x00001709   Thumb Code    32  a31l12x_hal_debug_frmwrk.o(i.UARTGetCh)
+    UARTGetChar                              0x00001729   Thumb Code    26  a31l12x_hal_debug_frmwrk.o(i.UARTGetChar)
+    UARTPutChar                              0x00001743   Thumb Code    18  a31l12x_hal_debug_frmwrk.o(i.UARTPutChar)
+    UARTPutDec                               0x00001755   Thumb Code    92  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec)
+    UARTPutDec16                             0x000017b1   Thumb Code   162  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec16)
+    UARTPutDec32                             0x00001859   Thumb Code   304  a31l12x_hal_debug_frmwrk.o(i.UARTPutDec32)
+    UARTPutHex                               0x000019a1   Thumb Code    54  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex)
+    UARTPutHex16                             0x000019d7   Thumb Code    54  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex16)
+    UARTPutHex32                             0x00001a0d   Thumb Code    54  a31l12x_hal_debug_frmwrk.o(i.UARTPutHex32)
+    UARTPuts                                 0x00001a43   Thumb Code    28  a31l12x_hal_debug_frmwrk.o(i.UARTPuts)
+    UARTPuts_                                0x00001a61   Thumb Code    24  a31l12x_hal_debug_frmwrk.o(i.UARTPuts_)
+    __ARM_common_switch8                     0x00001a7d   Thumb Code    28  main.o(i.__ARM_common_switch8)
+    debug_frmwrk_init                        0x00001b11   Thumb Code   130  a31l12x_hal_debug_frmwrk.o(i.debug_frmwrk_init)
+    main                                     0x00001c3d   Thumb Code    16  main.o(i.main)
+    mainloop                                 0x00001c4d   Thumb Code    36  main.o(i.mainloop)
+    rbReceive                                0x00001c75   Thumb Code    88  main.o(i.rbReceive)
+    menu                                     0x00001d10   Data         403  main.o(.constdata)
+    Region$$Table$$Base                      0x00001ea4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001ec4   Number         0  anon$$obj.o(Region$$Table)
     mclk                                     0x20000000   Data           4  system_a31l12x.o(.data)
     SystemCoreClock                          0x20000004   Data           4  system_a31l12x.o(.data)
     SystemPeriClock                          0x20000008   Data           4  system_a31l12x.o(.data)
@@ -1127,9 +1129,9 @@ Memory Map of the image
 
   Image Entry point : 0x000000c1
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00001ed0, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00001f28, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001e6c, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001ec4, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1194,102 +1196,102 @@ Memory Map of the image
     0x0000044c   0x0000044c   0x0000000c   Code   RO         1429    .text               c_p.l(sys_exit.o)
     0x00000458   0x00000458   0x00000002   Code   RO         1448    .text               c_p.l(use_no_semi.o)
     0x0000045a   0x0000045a   0x00000000   Code   RO         1450    .text               c_p.l(indicate_semi.o)
-    0x0000045a   0x0000045a   0x00000008   Code   RO          243    i.DEBUG_Init        main.o
-    0x00000462   0x00000462   0x00000002   PAD
-    0x00000464   0x00000464   0x0000001c   Code   RO          244    i.DEBUG_MenuPrint   main.o
-    0x00000480   0x00000480   0x00000044   Code   RO          717    i.HAL_GPIO_ConfigFunction  a31l12x_hal_pcu.o
-    0x000004c4   0x000004c4   0x00000046   Code   RO          719    i.HAL_GPIO_ConfigOutput  a31l12x_hal_pcu.o
-    0x0000050a   0x0000050a   0x00000002   PAD
-    0x0000050c   0x0000050c   0x00000010   Code   RO          513    i.HAL_INT_EInt_MaskDisable  a31l12x_hal_intc.o
-    0x0000051c   0x0000051c   0x0000006c   Code   RO          619    i.HAL_LPUART_ClearStatus  a31l12x_hal_lpuart.o
-    0x00000588   0x00000588   0x00000050   Code   RO          620    i.HAL_LPUART_ConfigInterrupt  a31l12x_hal_lpuart.o
-    0x000005d8   0x000005d8   0x0000002c   Code   RO          621    i.HAL_LPUART_ConfigStructInit  a31l12x_hal_lpuart.o
-    0x00000604   0x00000604   0x0000001c   Code   RO          624    i.HAL_LPUART_Enable  a31l12x_hal_lpuart.o
-    0x00000620   0x00000620   0x0000000c   Code   RO          625    i.HAL_LPUART_GetStatus  a31l12x_hal_lpuart.o
-    0x0000062c   0x0000062c   0x00000050   Code   RO          626    i.HAL_LPUART_Init   a31l12x_hal_lpuart.o
-    0x0000067c   0x0000067c   0x00000074   Code   RO          627    i.HAL_LPUART_Receive  a31l12x_hal_lpuart.o
-    0x000006f0   0x000006f0   0x0000000c   Code   RO          628    i.HAL_LPUART_ReceiveByte  a31l12x_hal_lpuart.o
-    0x000006fc   0x000006fc   0x00000078   Code   RO          629    i.HAL_LPUART_Transmit  a31l12x_hal_lpuart.o
-    0x00000774   0x00000774   0x00000010   Code   RO          630    i.HAL_LPUART_TransmitByte  a31l12x_hal_lpuart.o
-    0x00000784   0x00000784   0x0000003c   Code   RO          794    i.HAL_SCU_ClockMonitoring  a31l12x_hal_scu.o
-    0x000007c0   0x000007c0   0x00000020   Code   RO          798    i.HAL_SCU_ClockSource_Disable  a31l12x_hal_scu.o
-    0x000007e0   0x000007e0   0x00000024   Code   RO          799    i.HAL_SCU_ClockSource_Enable  a31l12x_hal_scu.o
-    0x00000804   0x00000804   0x0000000c   Code   RO          802    i.HAL_SCU_Peripheral_ClockConfig  a31l12x_hal_scu.o
-    0x00000810   0x00000810   0x00000018   Code   RO          803    i.HAL_SCU_Peripheral_ClockSelection  a31l12x_hal_scu.o
-    0x00000828   0x00000828   0x00000020   Code   RO          805    i.HAL_SCU_Peripheral_EnableClock2  a31l12x_hal_scu.o
-    0x00000848   0x00000848   0x0000001c   Code   RO          808    i.HAL_SCU_Peripheral_SetReset2  a31l12x_hal_scu.o
-    0x00000864   0x00000864   0x00000014   Code   RO          814    i.HAL_SCU_SystemClockChange  a31l12x_hal_scu.o
-    0x00000878   0x00000878   0x0000000c   Code   RO          815    i.HAL_SCU_SystemClockDivider  a31l12x_hal_scu.o
-    0x00000884   0x00000884   0x0000001e   Code   RO          953    i.HAL_UART_ConfigStructInit  a31l12x_hal_uartn.o
-    0x000008a2   0x000008a2   0x00000002   PAD
-    0x000008a4   0x000008a4   0x00000104   Code   RO          959    i.HAL_UART_Init     a31l12x_hal_uartn.o
-    0x000009a8   0x000009a8   0x00000074   Code   RO          960    i.HAL_UART_Receive  a31l12x_hal_uartn.o
-    0x00000a1c   0x00000a1c   0x00000008   Code   RO          961    i.HAL_UART_ReceiveByte  a31l12x_hal_uartn.o
-    0x00000a24   0x00000a24   0x00000080   Code   RO          962    i.HAL_UART_Transmit  a31l12x_hal_uartn.o
-    0x00000aa4   0x00000aa4   0x00000010   Code   RO          963    i.HAL_UART_TransmitByte  a31l12x_hal_uartn.o
-    0x00000ab4   0x00000ab4   0x00000004   Code   RO           56    i.HardFault_Handler  a31l12x_it.o
-    0x00000ab8   0x00000ab8   0x00000054   Code   RO          246    i.IntReceive        main.o
-    0x00000b0c   0x00000b0c   0x00000084   Code   RO          247    i.IntTransmit       main.o
-    0x00000b90   0x00000b90   0x00000190   Code   RO          248    i.LPUART_Configure  main.o
-    0x00000d20   0x00000d20   0x00000008   Code   RO           57    i.LPUART_Handler    a31l12x_it.o
-    0x00000d28   0x00000d28   0x00000022   Code   RO          249    i.LPUART_IRQHandler_IT  main.o
-    0x00000d4a   0x00000d4a   0x00000002   PAD
-    0x00000d4c   0x00000d4c   0x0000015c   Code   RO          250    i.LPUART_InterruptRun  main.o
-    0x00000ea8   0x00000ea8   0x0000001a   Code   RO          368    i.Meter_CalculateChecksum  meter_protocol.o
-    0x00000ec2   0x00000ec2   0x00000002   PAD
-    0x00000ec4   0x00000ec4   0x00000014   Code   RO          371    i.Meter_GetTick     meter_protocol.o
-    0x00000ed8   0x00000ed8   0x0000001c   Code   RO          372    i.Meter_Init        meter_protocol.o
-    0x00000ef4   0x00000ef4   0x000000dc   Code   RO          373    i.Meter_ProcessReceive  meter_protocol.o
-    0x00000fd0   0x00000fd0   0x0000013c   Code   RO          376    i.Meter_SendCommand  meter_protocol.o
-    0x0000110c   0x0000110c   0x00000020   Code   RO          378    i.Meter_SendPreamble  meter_protocol.o
-    0x0000112c   0x0000112c   0x0000000c   Code   RO          379    i.Meter_SetErrorCallback  meter_protocol.o
-    0x00001138   0x00001138   0x0000000c   Code   RO          380    i.Meter_SetResponseCallback  meter_protocol.o
-    0x00001144   0x00001144   0x00000074   Code   RO          381    i.Meter_Task        meter_protocol.o
-    0x000011b8   0x000011b8   0x00000002   Code   RO           58    i.NMI_Handler       a31l12x_it.o
-    0x000011ba   0x000011ba   0x00000002   PAD
-    0x000011bc   0x000011bc   0x000000e4   Code   RO          251    i.OnMeterError      main.o
-    0x000012a0   0x000012a0   0x000002f0   Code   RO          252    i.OnMeterResponseReceived  main.o
-    0x00001590   0x00001590   0x00000002   Code   RO           59    i.PendSV_Handler    a31l12x_it.o
-    0x00001592   0x00001592   0x00000002   PAD
-    0x00001594   0x00001594   0x000000a8   Code   RO          203    i.Port_Init         a31l12x_portinit.o
-    0x0000163c   0x0000163c   0x00000002   Code   RO           60    i.SVC_Handler       a31l12x_it.o
-    0x0000163e   0x0000163e   0x00000002   Code   RO           61    i.SysTick_Handler   a31l12x_it.o
-    0x00001640   0x00001640   0x0000004c   Code   RO          223    i.SystemClock_Config  a31l12x_systemclock.o
-    0x0000168c   0x0000168c   0x00000024   Code   RO            4    i.SystemInit        system_a31l12x.o
-    0x000016b0   0x000016b0   0x00000020   Code   RO         1055    i.UARTGetCh         a31l12x_hal_debug_frmwrk.o
-    0x000016d0   0x000016d0   0x0000001a   Code   RO         1056    i.UARTGetChar       a31l12x_hal_debug_frmwrk.o
-    0x000016ea   0x000016ea   0x00000012   Code   RO         1057    i.UARTPutChar       a31l12x_hal_debug_frmwrk.o
-    0x000016fc   0x000016fc   0x0000005c   Code   RO         1058    i.UARTPutDec        a31l12x_hal_debug_frmwrk.o
-    0x00001758   0x00001758   0x000000a8   Code   RO         1059    i.UARTPutDec16      a31l12x_hal_debug_frmwrk.o
-    0x00001800   0x00001800   0x00000148   Code   RO         1060    i.UARTPutDec32      a31l12x_hal_debug_frmwrk.o
-    0x00001948   0x00001948   0x00000036   Code   RO         1061    i.UARTPutHex        a31l12x_hal_debug_frmwrk.o
-    0x0000197e   0x0000197e   0x00000036   Code   RO         1062    i.UARTPutHex16      a31l12x_hal_debug_frmwrk.o
-    0x000019b4   0x000019b4   0x00000036   Code   RO         1063    i.UARTPutHex32      a31l12x_hal_debug_frmwrk.o
-    0x000019ea   0x000019ea   0x0000001c   Code   RO         1064    i.UARTPuts          a31l12x_hal_debug_frmwrk.o
-    0x00001a06   0x00001a06   0x00000002   PAD
-    0x00001a08   0x00001a08   0x0000001c   Code   RO         1065    i.UARTPuts_         a31l12x_hal_debug_frmwrk.o
-    0x00001a24   0x00001a24   0x0000001c   Code   RO          352    i.__ARM_common_switch8  main.o
-    0x00001a40   0x00001a40   0x00000078   Code   RO          253    i.__NVIC_SetPriority  main.o
-    0x00001ab8   0x00001ab8   0x000000e4   Code   RO         1067    i.debug_frmwrk_init  a31l12x_hal_debug_frmwrk.o
-    0x00001b9c   0x00001b9c   0x00000048   Code   RO          631    i.lpuart_set_divisors  a31l12x_hal_lpuart.o
-    0x00001be4   0x00001be4   0x00000010   Code   RO          255    i.main              main.o
-    0x00001bf4   0x00001bf4   0x00000028   Code   RO          256    i.mainloop          main.o
-    0x00001c1c   0x00001c1c   0x0000005c   Code   RO          257    i.rbReceive         main.o
-    0x00001c78   0x00001c78   0x00000040   Code   RO          964    i.uart_set_divisors  a31l12x_hal_uartn.o
-    0x00001cb8   0x00001cb8   0x00000193   Data   RO          260    .constdata          main.o
-    0x00001e4b   0x00001e4b   0x00000001   PAD
-    0x00001e4c   0x00001e4c   0x00000020   Data   RO         1502    Region$$Table       anon$$obj.o
+    0x0000045a   0x0000045a   0x00000002   PAD
+    0x0000045c   0x0000045c   0x00000060   Code   RO          243    i.DEBUG_Init        main.o
+    0x000004bc   0x000004bc   0x0000001c   Code   RO          244    i.DEBUG_MenuPrint   main.o
+    0x000004d8   0x000004d8   0x00000044   Code   RO          717    i.HAL_GPIO_ConfigFunction  a31l12x_hal_pcu.o
+    0x0000051c   0x0000051c   0x00000046   Code   RO          719    i.HAL_GPIO_ConfigOutput  a31l12x_hal_pcu.o
+    0x00000562   0x00000562   0x00000002   PAD
+    0x00000564   0x00000564   0x00000010   Code   RO          513    i.HAL_INT_EInt_MaskDisable  a31l12x_hal_intc.o
+    0x00000574   0x00000574   0x0000006c   Code   RO          619    i.HAL_LPUART_ClearStatus  a31l12x_hal_lpuart.o
+    0x000005e0   0x000005e0   0x00000050   Code   RO          620    i.HAL_LPUART_ConfigInterrupt  a31l12x_hal_lpuart.o
+    0x00000630   0x00000630   0x0000002c   Code   RO          621    i.HAL_LPUART_ConfigStructInit  a31l12x_hal_lpuart.o
+    0x0000065c   0x0000065c   0x0000001c   Code   RO          624    i.HAL_LPUART_Enable  a31l12x_hal_lpuart.o
+    0x00000678   0x00000678   0x0000000c   Code   RO          625    i.HAL_LPUART_GetStatus  a31l12x_hal_lpuart.o
+    0x00000684   0x00000684   0x00000050   Code   RO          626    i.HAL_LPUART_Init   a31l12x_hal_lpuart.o
+    0x000006d4   0x000006d4   0x00000074   Code   RO          627    i.HAL_LPUART_Receive  a31l12x_hal_lpuart.o
+    0x00000748   0x00000748   0x0000000c   Code   RO          628    i.HAL_LPUART_ReceiveByte  a31l12x_hal_lpuart.o
+    0x00000754   0x00000754   0x00000078   Code   RO          629    i.HAL_LPUART_Transmit  a31l12x_hal_lpuart.o
+    0x000007cc   0x000007cc   0x00000010   Code   RO          630    i.HAL_LPUART_TransmitByte  a31l12x_hal_lpuart.o
+    0x000007dc   0x000007dc   0x0000003c   Code   RO          794    i.HAL_SCU_ClockMonitoring  a31l12x_hal_scu.o
+    0x00000818   0x00000818   0x00000020   Code   RO          798    i.HAL_SCU_ClockSource_Disable  a31l12x_hal_scu.o
+    0x00000838   0x00000838   0x00000024   Code   RO          799    i.HAL_SCU_ClockSource_Enable  a31l12x_hal_scu.o
+    0x0000085c   0x0000085c   0x0000000c   Code   RO          802    i.HAL_SCU_Peripheral_ClockConfig  a31l12x_hal_scu.o
+    0x00000868   0x00000868   0x00000018   Code   RO          803    i.HAL_SCU_Peripheral_ClockSelection  a31l12x_hal_scu.o
+    0x00000880   0x00000880   0x00000020   Code   RO          805    i.HAL_SCU_Peripheral_EnableClock2  a31l12x_hal_scu.o
+    0x000008a0   0x000008a0   0x0000001c   Code   RO          808    i.HAL_SCU_Peripheral_SetReset2  a31l12x_hal_scu.o
+    0x000008bc   0x000008bc   0x00000014   Code   RO          814    i.HAL_SCU_SystemClockChange  a31l12x_hal_scu.o
+    0x000008d0   0x000008d0   0x0000000c   Code   RO          815    i.HAL_SCU_SystemClockDivider  a31l12x_hal_scu.o
+    0x000008dc   0x000008dc   0x0000001e   Code   RO          953    i.HAL_UART_ConfigStructInit  a31l12x_hal_uartn.o
+    0x000008fa   0x000008fa   0x00000002   PAD
+    0x000008fc   0x000008fc   0x00000104   Code   RO          959    i.HAL_UART_Init     a31l12x_hal_uartn.o
+    0x00000a00   0x00000a00   0x00000074   Code   RO          960    i.HAL_UART_Receive  a31l12x_hal_uartn.o
+    0x00000a74   0x00000a74   0x00000008   Code   RO          961    i.HAL_UART_ReceiveByte  a31l12x_hal_uartn.o
+    0x00000a7c   0x00000a7c   0x00000080   Code   RO          962    i.HAL_UART_Transmit  a31l12x_hal_uartn.o
+    0x00000afc   0x00000afc   0x00000010   Code   RO          963    i.HAL_UART_TransmitByte  a31l12x_hal_uartn.o
+    0x00000b0c   0x00000b0c   0x00000004   Code   RO           56    i.HardFault_Handler  a31l12x_it.o
+    0x00000b10   0x00000b10   0x00000054   Code   RO          246    i.IntReceive        main.o
+    0x00000b64   0x00000b64   0x00000084   Code   RO          247    i.IntTransmit       main.o
+    0x00000be8   0x00000be8   0x00000190   Code   RO          248    i.LPUART_Configure  main.o
+    0x00000d78   0x00000d78   0x00000008   Code   RO           57    i.LPUART_Handler    a31l12x_it.o
+    0x00000d80   0x00000d80   0x00000022   Code   RO          249    i.LPUART_IRQHandler_IT  main.o
+    0x00000da2   0x00000da2   0x00000002   PAD
+    0x00000da4   0x00000da4   0x0000015c   Code   RO          250    i.LPUART_InterruptRun  main.o
+    0x00000f00   0x00000f00   0x0000001a   Code   RO          368    i.Meter_CalculateChecksum  meter_protocol.o
+    0x00000f1a   0x00000f1a   0x00000002   PAD
+    0x00000f1c   0x00000f1c   0x00000014   Code   RO          371    i.Meter_GetTick     meter_protocol.o
+    0x00000f30   0x00000f30   0x0000001c   Code   RO          372    i.Meter_Init        meter_protocol.o
+    0x00000f4c   0x00000f4c   0x000000dc   Code   RO          373    i.Meter_ProcessReceive  meter_protocol.o
+    0x00001028   0x00001028   0x0000013c   Code   RO          376    i.Meter_SendCommand  meter_protocol.o
+    0x00001164   0x00001164   0x00000020   Code   RO          378    i.Meter_SendPreamble  meter_protocol.o
+    0x00001184   0x00001184   0x0000000c   Code   RO          379    i.Meter_SetErrorCallback  meter_protocol.o
+    0x00001190   0x00001190   0x0000000c   Code   RO          380    i.Meter_SetResponseCallback  meter_protocol.o
+    0x0000119c   0x0000119c   0x00000074   Code   RO          381    i.Meter_Task        meter_protocol.o
+    0x00001210   0x00001210   0x00000002   Code   RO           58    i.NMI_Handler       a31l12x_it.o
+    0x00001212   0x00001212   0x00000002   PAD
+    0x00001214   0x00001214   0x000000e4   Code   RO          251    i.OnMeterError      main.o
+    0x000012f8   0x000012f8   0x000002f0   Code   RO          252    i.OnMeterResponseReceived  main.o
+    0x000015e8   0x000015e8   0x00000002   Code   RO           59    i.PendSV_Handler    a31l12x_it.o
+    0x000015ea   0x000015ea   0x00000002   PAD
+    0x000015ec   0x000015ec   0x000000a8   Code   RO          203    i.Port_Init         a31l12x_portinit.o
+    0x00001694   0x00001694   0x00000002   Code   RO           60    i.SVC_Handler       a31l12x_it.o
+    0x00001696   0x00001696   0x00000002   Code   RO           61    i.SysTick_Handler   a31l12x_it.o
+    0x00001698   0x00001698   0x0000004c   Code   RO          223    i.SystemClock_Config  a31l12x_systemclock.o
+    0x000016e4   0x000016e4   0x00000024   Code   RO            4    i.SystemInit        system_a31l12x.o
+    0x00001708   0x00001708   0x00000020   Code   RO         1055    i.UARTGetCh         a31l12x_hal_debug_frmwrk.o
+    0x00001728   0x00001728   0x0000001a   Code   RO         1056    i.UARTGetChar       a31l12x_hal_debug_frmwrk.o
+    0x00001742   0x00001742   0x00000012   Code   RO         1057    i.UARTPutChar       a31l12x_hal_debug_frmwrk.o
+    0x00001754   0x00001754   0x0000005c   Code   RO         1058    i.UARTPutDec        a31l12x_hal_debug_frmwrk.o
+    0x000017b0   0x000017b0   0x000000a8   Code   RO         1059    i.UARTPutDec16      a31l12x_hal_debug_frmwrk.o
+    0x00001858   0x00001858   0x00000148   Code   RO         1060    i.UARTPutDec32      a31l12x_hal_debug_frmwrk.o
+    0x000019a0   0x000019a0   0x00000036   Code   RO         1061    i.UARTPutHex        a31l12x_hal_debug_frmwrk.o
+    0x000019d6   0x000019d6   0x00000036   Code   RO         1062    i.UARTPutHex16      a31l12x_hal_debug_frmwrk.o
+    0x00001a0c   0x00001a0c   0x00000036   Code   RO         1063    i.UARTPutHex32      a31l12x_hal_debug_frmwrk.o
+    0x00001a42   0x00001a42   0x0000001c   Code   RO         1064    i.UARTPuts          a31l12x_hal_debug_frmwrk.o
+    0x00001a5e   0x00001a5e   0x00000002   PAD
+    0x00001a60   0x00001a60   0x0000001c   Code   RO         1065    i.UARTPuts_         a31l12x_hal_debug_frmwrk.o
+    0x00001a7c   0x00001a7c   0x0000001c   Code   RO          352    i.__ARM_common_switch8  main.o
+    0x00001a98   0x00001a98   0x00000078   Code   RO          253    i.__NVIC_SetPriority  main.o
+    0x00001b10   0x00001b10   0x000000e4   Code   RO         1067    i.debug_frmwrk_init  a31l12x_hal_debug_frmwrk.o
+    0x00001bf4   0x00001bf4   0x00000048   Code   RO          631    i.lpuart_set_divisors  a31l12x_hal_lpuart.o
+    0x00001c3c   0x00001c3c   0x00000010   Code   RO          255    i.main              main.o
+    0x00001c4c   0x00001c4c   0x00000028   Code   RO          256    i.mainloop          main.o
+    0x00001c74   0x00001c74   0x0000005c   Code   RO          257    i.rbReceive         main.o
+    0x00001cd0   0x00001cd0   0x00000040   Code   RO          964    i.uart_set_divisors  a31l12x_hal_uartn.o
+    0x00001d10   0x00001d10   0x00000193   Data   RO          260    .constdata          main.o
+    0x00001ea3   0x00001ea3   0x00000001   PAD
+    0x00001ea4   0x00001ea4   0x00000020   Data   RO         1502    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00001e6c, Size: 0x00000730, Max: 0x00002000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00001ec4, Size: 0x00000730, Max: 0x00002000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00001e6c   0x0000001c   Data   RW            5    .data               system_a31l12x.o
-    0x2000001c   0x00001e88   0x00000008   Data   RW          261    .data               main.o
-    0x20000024   0x00001e90   0x00000008   Data   RW          384    .data               meter_protocol.o
-    0x2000002c   0x00001e98   0x0000000c   Data   RW          966    .data               a31l12x_hal_uartn.o
-    0x20000038   0x00001ea4   0x0000002c   Data   RW         1069    .data               a31l12x_hal_debug_frmwrk.o
+    0x20000000   0x00001ec4   0x0000001c   Data   RW            5    .data               system_a31l12x.o
+    0x2000001c   0x00001ee0   0x00000008   Data   RW          261    .data               main.o
+    0x20000024   0x00001ee8   0x00000008   Data   RW          384    .data               meter_protocol.o
+    0x2000002c   0x00001ef0   0x0000000c   Data   RW          966    .data               a31l12x_hal_uartn.o
+    0x20000038   0x00001efc   0x0000002c   Data   RW         1069    .data               a31l12x_hal_debug_frmwrk.o
     0x20000064        -       0x00000150   Zero   RW          259    .bss                main.o
     0x200001b4        -       0x0000021c   Zero   RW          383    .bss                meter_protocol.o
     0x200003d0        -       0x00000060   Zero   RW         1368    .bss                c_p.l(libspace.o)
@@ -1343,16 +1345,16 @@ Image component sizes
         20          0          0          0          0     471220   a31l12x_it.o
        168         38          0          0          0        696   a31l12x_portinit.o
         76         12          0          0          0        629   a31l12x_systemclock.o
-      2310        832        403          8        336      20061   main.o
+      2398        860        403          8        336      20237   main.o
        782         66          0          8        540       8129   meter_protocol.o
        324        324          0          0          0        792   option_a31l12x.o
         56         26        192          0        768        772   startup_a31l12x.o
         36         14          0         28          0     467394   system_a31l12x.o
 
     ----------------------------------------------------------------------
-      6618       1622        628        100       1644    1012336   Object Totals
+      6704       1650        628        100       1644    1012512   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        16          0          1          0          0          0   (incl. Padding)
+        14          0          1          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1383,8 +1385,8 @@ Image component sizes
          2          0          0          0          0         68   use_no_semi.o
 
     ----------------------------------------------------------------------
-       866         16          0          0         96        892   Library Totals
-         4          0          0          0          0          0   (incl. Padding)
+       868         16          0          0         96        892   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1393,7 +1395,7 @@ Image component sizes
        862         16          0          0         96        892   c_p.l
 
     ----------------------------------------------------------------------
-       866         16          0          0         96        892   Library Totals
+       868         16          0          0         96        892   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1402,15 +1404,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      7484       1638        628        100       1740    1009908   Grand Totals
-      7484       1638        628        100       1740    1009908   ELF Image Totals
-      7484       1638        628        100          0          0   ROM Totals
+      7572       1666        628        100       1740    1010084   Grand Totals
+      7572       1666        628        100       1740    1010084   ELF Image Totals
+      7572       1666        628        100          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 8112 (   7.92kB)
+    Total RO  Size (Code + RO Data)                 8200 (   8.01kB)
     Total RW  Size (RW Data + ZI Data)              1840 (   1.80kB)
-    Total ROM Size (Code + RO Data + RW Data)       8212 (   8.02kB)
+    Total ROM Size (Code + RO Data + RW Data)       8300 (   8.11kB)
 
 ==============================================================================
 

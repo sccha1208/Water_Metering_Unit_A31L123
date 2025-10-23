@@ -16,6 +16,10 @@
 
 static METER_CONTEXT_Type g_meter_ctx;
 
+// 수신 상태 관리 변수 (정적 변수 문제 해결)
+// 0: 대기, 1: 0x68 감지 후 데이터 수신 중
+static uint8_t g_rx_state = 0;
+
 // 외부 함수 참조 (main.c에서 정의)
 extern uint32_t rbSend(uint8_t* txbuf, uint8_t buflen);
 extern uint32_t rbReceive(uint8_t* rxbuf, uint8_t buflen);
@@ -93,7 +97,7 @@ void Meter_SendPreamble(void)
     // SystemCoreClock = 32MHz 기준
     // 32,000,000 Hz / 1000 * 20 = 640,000 사이클
     // 실제로는 루프 오버헤드 고려하여 조정
-    for (delay = 0; delay < 160000; delay++)  // 약 20ms
+    for (delay = 0; delay < METER_PREAMBLE_DELAY_CYCLES; delay++)
     {
         __NOP();
     }
@@ -194,11 +198,11 @@ METER_ERROR_Type Meter_SendCommand(uint8_t addr, uint8_t cmd, uint8_t* data, uin
 
         // LPUART를 일시적으로 비활성화 후 재활성화 (FIFO 클리어)
         HAL_LPUART_Enable(DISABLE);
-        for (delay = 0; delay < 1000; delay++) { __NOP(); }
+        for (delay = 0; delay < METER_FIFO_CLEAR_DELAY; delay++) { __NOP(); }
         HAL_LPUART_Enable(ENABLE);
 
         // 추가 안정화 딜레이 (첫 바이트 손실 방지)
-        for (delay = 0; delay < 5000; delay++) { __NOP(); }
+        for (delay = 0; delay < METER_TX_STABILIZE_DELAY; delay++) { __NOP(); }
     }
 
     // 디버그: 전송 프레임 출력 (주석 처리 - 필요시 활성화)
@@ -225,7 +229,7 @@ METER_ERROR_Type Meter_SendCommand(uint8_t addr, uint8_t cmd, uint8_t* data, uin
         volatile uint32_t delay;
         // 5바이트 전송 시간: 5 * 10 bits / 1200 bps = ~41.7ms
         // 여유를 두고 50ms 대기
-        for (delay = 0; delay < 400000; delay++)  // 약 50ms
+        for (delay = 0; delay < METER_TX_COMPLETE_DELAY; delay++)  // 약 50ms
         {
             __NOP();
         }
@@ -276,25 +280,24 @@ METER_ERROR_Type Meter_SendNAK(void)
 void Meter_ProcessReceive(uint8_t* data, uint16_t length)
 {
     uint16_t i;
-    static uint8_t rx_state = 0;  // 0: 대기, 1: 0x68 감지, 2: 데이터 수신 중
 
     for (i = 0; i < length; i++)
     {
         uint8_t byte = data[i];
 
         // 0x68 트리거 감지 (프레임 시작)
-        if (byte == METER_FRAME_START_RX && rx_state == 0)
+        if (byte == METER_FRAME_START_RX && g_rx_state == 0)
         {
             // 프레임 시작
             g_meter_ctx.rx_index = 0;
             g_meter_ctx.rx_buffer[g_meter_ctx.rx_index++] = byte;
-            rx_state = 1;
+            g_rx_state = 1;
             g_meter_ctx.state = METER_STATE_RX;
             continue;
         }
 
         // 수신 중 상태
-        if (rx_state > 0)
+        if (g_rx_state > 0)
         {
             // 버퍼 오버플로우 체크
             if (g_meter_ctx.rx_index >= METER_MAX_FRAME_SIZE)
@@ -305,7 +308,7 @@ void Meter_ProcessReceive(uint8_t* data, uint16_t length)
                 {
                     g_meter_ctx.on_error(METER_ERR_BUFFER_OVERFLOW);
                 }
-                rx_state = 0;
+                g_rx_state = 0;  // 상태 초기화
                 g_meter_ctx.rx_index = 0;
                 return;
             }
@@ -326,13 +329,21 @@ void Meter_ProcessReceive(uint8_t* data, uint16_t length)
                 }
 
                 // 상태 초기화
-                rx_state = 0;
+                g_rx_state = 0;
                 g_meter_ctx.state = METER_STATE_IDLE;
                 g_meter_ctx.rx_index = 0;
                 return;
             }
         }
     }
+}
+
+/**
+ * @brief 수신 상태 리셋
+ */
+static void Meter_ResetRxState(void)
+{
+    g_rx_state = 0;
 }
 
 /**
@@ -368,7 +379,37 @@ void Meter_Task(void)
             {
                 g_meter_ctx.retry_count++;
                 g_meter_ctx.state = METER_STATE_IDLE;
-                // 여기서 재전송 로직 구현 가능
+
+                // 재전송 로직: 마지막 전송 프레임을 다시 전송
+                if (g_meter_ctx.tx_length > 0)
+                {
+                    // Preamble 전송
+                    Meter_SendPreamble();
+
+                    // FIFO 클리어
+                    HAL_LPUART_ConfigInterrupt(LPUART_INTCFG_TXCIEN, DISABLE);
+                    HAL_LPUART_Enable(DISABLE);
+                    {
+                        volatile uint32_t delay;
+                        for (delay = 0; delay < METER_FIFO_CLEAR_DELAY; delay++) { __NOP(); }
+                    }
+                    HAL_LPUART_Enable(ENABLE);
+
+                    // 재전송
+                    g_meter_ctx.state = METER_STATE_TX;
+                    HAL_LPUART_Transmit(g_meter_ctx.tx_buffer, g_meter_ctx.tx_length, BLOCKING);
+
+                    // 전송 완료 대기
+                    {
+                        volatile uint32_t delay;
+                        for (delay = 0; delay < METER_TX_COMPLETE_DELAY; delay++) { __NOP(); }
+                    }
+
+                    // 응답 대기 상태로 전환
+                    g_meter_ctx.state = METER_STATE_WAIT_RESPONSE;
+                    g_meter_ctx.timeout_ms = Meter_GetTick() + METER_RESPONSE_TIMEOUT_MS;
+                    HAL_LPUART_ConfigInterrupt(LPUART_INTCFG_RXCIEN, ENABLE);
+                }
             }
             else
             {
@@ -408,20 +449,37 @@ void Meter_Reset(void)
     g_meter_ctx.tx_length = 0;
     g_meter_ctx.retry_count = 0;
     g_meter_ctx.last_error = METER_ERR_NONE;
+
+    // 수신 상태도 리셋
+    Meter_ResetRxState();
 }
+
+/**
+ * @brief 수신 상태 리셋 (내부 함수)
+ */
+static void Meter_ResetRxState(void);  // Forward declaration
 
 //******************************************************************************
 // 내부 함수 구현
 //******************************************************************************
 
+// SysTick 기반 밀리초 카운터 (전역 변수)
+static volatile uint32_t g_systick_ms = 0;
+
+/**
+ * @brief SysTick 인터럽트 핸들러에서 호출 (1ms마다)
+ * @note A31L12x_it.c의 SysTick_Handler()에서 이 함수를 호출해야 함
+ */
+void Meter_SysTick_Increment(void)
+{
+    g_systick_ms++;
+}
+
 /**
  * @brief 시스템 틱 가져오기 (밀리초 단위)
- * @note 실제 시스템에 맞게 구현 필요
+ * @return 시스템 시작 후 경과 시간 (ms)
  */
 static uint32_t Meter_GetTick(void)
 {
-    // TODO: 실제 시스템 틱 카운터 구현
-    // SysTick 또는 타이머를 사용하여 밀리초 단위 카운터 반환
-    static uint32_t tick_counter = 0;
-    return tick_counter++;
+    return g_systick_ms;
 }

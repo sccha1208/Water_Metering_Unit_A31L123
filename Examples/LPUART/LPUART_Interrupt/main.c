@@ -640,6 +640,11 @@ int main( void )
    /* Initialize Debug frame work through initializing USART port  */
    DEBUG_Init();
 
+   /* Configure SysTick for 1ms tick (Meter protocol timeout support) */
+   // SystemCoreClock = 32MHz
+   // SysTick_Config(32000) = 1ms 인터럽트
+   SysTick_Config( SystemCoreClock / 1000 );
+
    /* Infinite loop */
    mainloop();
 

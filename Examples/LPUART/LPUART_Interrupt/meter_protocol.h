@@ -67,6 +67,12 @@ extern "C" {
 // 재전송
 #define METER_MAX_RETRY             3           // 최대 재전송 횟수
 
+// 딜레이 상수 (meter_protocol.c 내부 사용)
+#define METER_PREAMBLE_DELAY_CYCLES 160000      // Preamble 20ms (32MHz 기준)
+#define METER_TX_STABILIZE_DELAY    5000        // LPUART TX 안정화 딜레이
+#define METER_FIFO_CLEAR_DELAY      1000        // FIFO 클리어 딜레이
+#define METER_TX_COMPLETE_DELAY     400000      // TX 완료 대기 (~50ms)
+
 //******************************************************************************
 // 타입 정의
 //******************************************************************************
@@ -165,6 +171,9 @@ void Meter_SendPreamble(void);  // 20ms High Level 전송
 METER_STATE_Type Meter_GetState(void);
 METER_ERROR_Type Meter_GetLastError(void);
 void Meter_Reset(void);
+
+// SysTick 지원 함수 (A31L12x_it.c에서 호출)
+void Meter_SysTick_Increment(void);
 
 #ifdef __cplusplus
 }

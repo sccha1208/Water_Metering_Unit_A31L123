@@ -116,7 +116,7 @@ I (..\..\..\..\Drivers\Include\A31L12x_hal_timer5n.h)(0x642E67C5)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_usart1n.h)(0x642E2B22)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_wdt.h)(0x642E2B35)
 I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_it.h)(0x642E2F98)
-F (..\..\..\..\Examples\LPUART\LPUART_Interrupt\main.c)(0x68F733A4)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\..\..\..\Examples\LPUART\LPUART_Interrupt\main.c)(0x68F73585)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\main_conf.h)(0x68F73384)
 I (..\..\..\..\Core\Device\ABOV\A31L12x\Include\A31L12x.h)(0x5FC6217C)
 I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D3DAD2)

@@ -1,0 +1,50 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git pull:*)",
+      "Bash(git add:*)",
+      "Bash(git status:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "outputStyle": "firmware-core-analysis-ko",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git add {{file_path}} && git commit -m \"Auto-commit: Updated {{file_path}} via Claude Code\" || echo \"No changes to commit\""
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git add {{file_path}} && git commit -m \"Auto-commit: Edited {{file_path}} via Claude Code\" || echo \"No changes to commit\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Claude 작업이 완료되었습니다!\\n\\n', 'OK', 'Information')\""
+          }
+        ]
+      }
+    ]
+  }
+}
