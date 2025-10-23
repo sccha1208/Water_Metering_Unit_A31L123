@@ -53,3 +53,28 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Keil MDK build outputs
+*.uvguix.*
+*.crf
+*.axf
+*.htm
+*.lnp
+*.lst
+*.dep
+*.build_log.htm
+**/Objects/
+**/Listings/
+**/DebugConfig/
+
+# IAR EWARM build outputs
+**/Debug/
+**/Release/
+*.pbi
+*.xcl
+*.pbd
+
+# DevContainer (empty placeholder files)
+.devcontainer/Dockerfile
+.devcontainer/devcontainer.json
+.devcontainer/init-firewall.sh
