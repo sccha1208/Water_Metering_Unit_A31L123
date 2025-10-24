@@ -428,6 +428,11 @@
               <FileType>1</FileType>
               <FilePath>..\meter_protocol.c</FilePath>
             </File>
+            <File>
+              <FileName>meter_protocol_parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\meter_protocol_parser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

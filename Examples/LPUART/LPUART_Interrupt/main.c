@@ -47,6 +47,7 @@ void Error_Handler( void );
 // Meter protocol callback function prototypes
 void OnMeterResponseReceived( uint8_t* data, uint16_t length );
 void OnMeterError( METER_ERROR_Type error );
+void Test_Protocol_Parser( void );
 
 //******************************************************************************
 // Constant
@@ -94,15 +95,18 @@ typedef struct
 //******************************************************************************
 
 const uint8_t menu[] =  "************************************************\n\r"
-                        "Seoul Digital Water Meter Protocol V1.3 \n\r"
+                        "Seoul Digital Water Meter Protocol V1.1~V1.4 \n\r"
                         "  - MCU:        A31L123 \n\r"
                         "  - Core:       Cortex-M0+ \n\r"
                         "  - Protocol:   1200bps, 8-N-1 \n\r"
                         "Target Peripheral: LPUART \n\r"
                         "Counterpart:       Digital Water Meter \n\r"
-                        "Tx Data:           Protocol frames \n\r"
+                        "Protocol Versions: V1.1, V1.2, V1.3, V1.4 \n\r"
+                        "Auto Detection:    Enabled \n\r"
                         "UART TXD Pin:      PB3(LPTXD) \n\r"
                         "UART RXD Pin:      PB4(LPRXD) \n\r"
+                        "************************************************\n\r"
+                        "Press 't' to run Protocol Parser Test\n\r"
                         "************************************************\n\r\n\r";
 
 // ring buffer
@@ -302,12 +306,16 @@ void LPUART_IRQHandler_IT( void )
    if( ( intsrc & LPUART_IFSR_RXCIFLAG_Msk ) == LPUART_IFSR_RXCIFLAG_Msk )
    {
       IntReceive();
+      // Clear RX interrupt flag
+      HAL_LPUART_ClearStatus( LPUART_STATUS_RXCIFLAG );
    }
 
    // if Transmit Complete Interrupt
    if( ( intsrc & LPUART_IFSR_TXCIFLAG_Msk ) == LPUART_IFSR_TXCIFLAG_Msk )
    {
       IntTransmit();
+      // Clear TX interrupt flag
+      HAL_LPUART_ClearStatus( LPUART_STATUS_TXCIFLAG );
    }
 }
 
@@ -371,40 +379,76 @@ void LPUART_Configure( void )
    {
       // uart TXD/RXD pin configuration
       {
-         // print
-         _DBG( "PB3 was configured as a LPTXD. \n\r" );
-         _DBG( "PB4 was configured as a LPRXD. \n\r\n\r" );
+         _DBG( "\n\r========================================\n\r" );
+         _DBG( "LPUART Pin Configuration\n\r" );
+         _DBG( "========================================\n\r" );
 
          // configure PB3 as a LPTXD                              // PA8            0: ----        1: ----        2: LPTXD       3: ----        4: AN8         5: ----        6: ----        7: SEG14
          HAL_GPIO_ConfigOutput( ( Pn_Type* )PB, 3, ALTERN_FUNC );      // PB3            0: T41OUTA     1: T41INP      2: LPTXD       3: SCK0        4: SCL1        5: ----        6: ADTRG       7: SEG9
          HAL_GPIO_ConfigFunction( ( Pn_Type* )PB, 3, AFSRx_AF2 );   // PC8            0: ----        1: ----        2: LPTXD       3: SCK10       4: SC0CLK      5: ----        6: ----        7: COM4/SEG25
+         _DBG( "PB3 configured as LPTXD (AF2)\n\r" );
 
          // configure PB4 as a LPRXD                              // PA9            0: ----        1: ----        2: LPRXD       3: ----        4: AN9         5: ----        6: ----        7: SEG13
          HAL_GPIO_ConfigOutput( ( Pn_Type* )PB, 4, ALTERN_FUNC );      // PB4            0: T41OUTB     1: EC41        2: LPRXD       3: ----        4: SDA1        5: ----        6: ADTRG       7: SEG8
          HAL_GPIO_ConfigFunction( ( Pn_Type* )PB, 4, AFSRx_AF2 );   // PC7            0: T40OUTA     1: T40INP      2: RXD10       3: MISO10      4: SC0RST      5: SC0RXD      6: SS1         7: SEG24
+         _DBG( "PB4 configured as LPRXD (AF2)\n\r" );
+
+         // 레지스터 상태 출력
+         _DBG( "PB->MOD (PB3/PB4): 0x" );
+         _DBH( (uint8_t)((PB->MOD >> 6) & 0xFF) );
+         _DBG( "\n\r" );
+
+         _DBG( "PB->AFSR1 (PB3/PB4): 0x" );
+         _DBH( (uint8_t)((PB->AFSR1 >> 12) & 0xFF) );
+         _DBG( "\n\r" );
+         _DBG( "========================================\n\r\n\r" );
       }
 
       // uart configuration
       {
+         _DBG( "========================================\n\r" );
+         _DBG( "LPUART Configuration\n\r" );
+         _DBG( "========================================\n\r" );
+
          // Seoul Digital Water Meter Protocol: 1200bps, 8-N-1
          HAL_LPUART_ConfigStructInit( &LPUART_Config );
 
          // Baud rate setting: 1200 bps
          LPUART_Config.Baudrate = 1200;
+         _DBG( "Baudrate: 1200 bps\n\r" );
 
          // select peripheral clock: PCLK
          HAL_SCU_Peripheral_ClockSelection( PPCLKSR_LPUTCLK, LPUTCLK_PCLK );
          LPUART_Config.BaseClock = SystemPeriClock;
+         _DBG( "Base Clock: " );
+         _DBD32( SystemPeriClock );
+         _DBG( " Hz\n\r" );
 
          // init LPUART
          HAL_LPUART_Init( &LPUART_Config );
+         _DBG( "LPUART Initialized\n\r" );
 
          // enable interrupt
          HAL_LPUART_ConfigInterrupt( LPUART_INTCFG_RXCIEN, ENABLE );
          HAL_LPUART_ConfigInterrupt( LPUART_INTCFG_TXCIEN, ENABLE );
+         _DBG( "Interrupts Enabled (RX/TX)\n\r" );
 
          // enable LPUART
          HAL_LPUART_Enable( ENABLE );
+         _DBG( "LPUART Enabled\n\r" );
+
+         // LPUART 레지스터 상태 출력
+         _DBG( "\n\rLPUART Register Status:\n\r" );
+         _DBG( "  CR1: 0x" );
+         _DBH( (uint8_t)(LPUART->CR1 & 0xFF) );
+         _DBG( "\n\r" );
+
+         _DBG( "  BDR: 0x" );
+         _DBH( (uint8_t)((LPUART->BDR >> 8) & 0xFF) );
+         _DBH( (uint8_t)(LPUART->BDR & 0xFF) );
+         _DBG( "\n\r" );
+
+         _DBG( "========================================\n\r\n\r" );
       }
 
       // unmask interrupt
@@ -417,6 +461,19 @@ void LPUART_Configure( void )
    {
       volatile uint32_t delay;
       for( delay = 0; delay < 100000; delay++ );
+   }
+
+   // LPUART 전송 테스트 (간단한 바이트 전송)
+   {
+      _DBG( "\n\rLPUART Test: Sending 0xAA...\n\r" );
+
+      uint8_t test_byte = 0xAA;
+      HAL_LPUART_Transmit( &test_byte, 1, BLOCKING );
+
+      volatile uint32_t delay;
+      for( delay = 0; delay < 100000; delay++ );
+
+      _DBG( "LPUART Test: 0xAA sent\n\r" );
    }
 
    // 첫 전송 시 0x10 누락 방지: 더미 바이트 전송
@@ -449,8 +506,6 @@ static uint16_t g_meter_rx_length = 0;  // Length of last received frame
 
 void OnMeterResponseReceived( uint8_t* data, uint16_t length )
 {
-   uint16_t i;
-
    // Store data to global buffer for later use
    if( length <= sizeof( g_meter_rx_data ) )
    {
@@ -461,45 +516,42 @@ void OnMeterResponseReceived( uint8_t* data, uint16_t length )
       (void)g_meter_rx_length;
    }
 
-   // Debug output to debug port
+   // 범용 파서 사용: 자동 버전 감지 및 파싱
+   MeterData_t parsed_data;
+
    _DBG( "\n\r" );
    _DBG( "====================================\n\r" );
-   _DBG( "  Meter Response (0x68 Trigger)\n\r" );
+   _DBG( "  Meter Response Received\n\r" );
    _DBG( "====================================\n\r" );
-   _DBG( "Frame Length: " );
-   _DBD16( length );
-   _DBG( " bytes\n\r" );
-   _DBG( "\n\rFrame (HEX):\n\r" );
 
-   // Print received data to debug port (HEX format)
-   for( i = 0; i < length; i++ )
+   // 프레임 파싱 시도
+   if( Meter_ParseFrame( data, length, &parsed_data ) )
    {
-      _DBH( data[i] );
-      _DBG( " " );
-
-      // New line every 16 bytes
-      if( ( i + 1 ) % 16 == 0 && i < length - 1 )
-      {
-         _DBG( "\n\r" );
-      }
+      // 파싱 성공: 구조화된 데이터 출력
+      Meter_PrintParsedData( &parsed_data );
    }
-
-   // Frame structure analysis
-   _DBG( "\n\r\n\rFrame Analysis:\n\r" );
-   if( length >= 6 )
+   else
    {
-      _DBG( "  START1  : 0x" ); _DBH( data[0] ); _DBG( "\n\r" );
-      _DBG( "  LENGTH1 : 0x" ); _DBH( data[1] ); _DBG( " (" ); _DBD( data[1] ); _DBG( " bytes)\n\r" );
-      _DBG( "  LENGTH2 : 0x" ); _DBH( data[2] ); _DBG( "\n\r" );
-      _DBG( "  START2  : 0x" ); _DBH( data[3] ); _DBG( "\n\r" );
+      // 파싱 실패: 원본 HEX 데이터만 출력
+      _DBG( "[ERROR] Failed to parse frame\n\r" );
+      _DBG( "Raw frame (" );
+      _DBD16( length );
+      _DBG( " bytes):\n\r" );
 
-      if( length >= data[1] + 6 )
+      uint16_t i;
+      for( i = 0; i < length; i++ )
       {
-         _DBG( "  CHECKSUM: 0x" ); _DBH( data[length - 2] ); _DBG( "\n\r" );
-         _DBG( "  END     : 0x" ); _DBH( data[length - 1] ); _DBG( "\n\r" );
+         _DBH( data[i] );
+         _DBG( " " );
+
+         // New line every 16 bytes
+         if( ( i + 1 ) % 16 == 0 && i < length - 1 )
+         {
+            _DBG( "\n\r" );
+         }
       }
+      _DBG( "\n\r====================================\n\r\n\r" );
    }
-   _DBG( "====================================\n\r\n\r" );
 }
 
 /*-------------------------------------------------------------------------*//**
@@ -555,13 +607,28 @@ void LPUART_InterruptRun( void )
    Meter_SetErrorCallback( OnMeterError );
 
    _DBG( "\n\rSeoul Digital Water Meter Protocol Initialized\n\r" );
-   _DBG( "Baudrate: 1200 bps, Format: 8-N-1\n\r\n\r" );
+   _DBG( "Baudrate: 1200 bps, Format: 8-N-1\n\r" );
+   _DBG( "Auto Version Detection: V1.1, V1.2, V1.3, V1.4\n\r\n\r" );
 
    /* Infinite loop */
    while( 1 )
    {
       // Execute meter protocol task (RX processing and timeout check)
       Meter_Task();
+
+      // Check for debug UART input (UART1)
+      // Press 't' to run Protocol Parser Test
+      if( HAL_UART_GetLineStatus( (UARTn_Type*)UART1 ) & UARTn_LSR_RDR )
+      {
+         uint8_t ch = HAL_UART_ReceiveByte( (UARTn_Type*)UART1 );
+
+         if( ch == 't' || ch == 'T' )
+         {
+            _DBG( "\n\rRunning Protocol Parser Test...\n\r" );
+            Test_Protocol_Parser();
+            _DBG( "Test complete. Press 't' again to re-run.\n\r\n\r" );
+         }
+      }
 
       // Test: Send command every 5 seconds
       static uint32_t tick_counter = 0;
@@ -649,6 +716,165 @@ int main( void )
    mainloop();
 
    return 0;
+}
+
+/*-------------------------------------------------------------------------*//**
+ * @brief         프로토콜 파서 테스트 함수 (V1.1~V1.4 샘플 데이터)
+ * @param         None
+ * @return        None
+ * @note          4개 버전의 실제 프레임 샘플로 파서 테스트
+ *//*-------------------------------------------------------------------------*/
+void Test_Protocol_Parser( void )
+{
+   _DBG("\r\n");
+   _DBG("==================================================\r\n");
+   _DBG("  Seoul Water Meter Protocol Parser Test\r\n");
+   _DBG("  Testing V1.1, V1.2, V1.3, V1.4\r\n");
+   _DBG("==================================================\r\n");
+   _DBG("\r\n");
+
+   MeterData_t parsed_data;
+
+   //==========================================================================
+   // TEST 1: V1.1 샘플 프레임 (UDF 없음, L=12)
+   //==========================================================================
+   // 68 0C 0C 68 08 01 78 0F 12 34 56 78 84 1C 13 00 00 12 34 D7 16
+   // UserData 길이 = 12 (0x0C - 3 = 9가 아니라 L=12)
+   // MDH(0F) + ID(12345678) + Status(84) + DIF(1C) + VIF(13) + Data(00001234)
+   _DBG("==================================================\r\n");
+   _DBG("TEST 1: Protocol V1.1 (2013.06)\r\n");
+   _DBG("==================================================\r\n");
+
+   uint8_t frame_v11[] = {
+      0x68, 0x0F, 0x0F, 0x68,  // Start + L + L + Start (L = C + A + CI + UserData = 3 + 12 = 15)
+      0x08, 0x01, 0x78,        // C + A + CI
+      0x0F,                    // MDH
+      0x12, 0x34, 0x56, 0x78,  // ID (BCD): 78563412
+      0x84,                    // Status: 10000100 (Q4초과, Batt Low)
+      0x1C,                    // DIF: 구경 정보
+      0x13,                    // VIF: 소수점 3
+      0x00, 0x00, 0x12, 0x34,  // Data (BCD): 34120000
+      0xC8,                    // Checksum (08+01+78+0F+12+34+56+78+84+1C+13+00+00+12+34=1C8, LSB=C8)
+      0x16                     // End
+   };
+
+   if (Meter_ParseFrame(frame_v11, sizeof(frame_v11), &parsed_data))
+   {
+      Meter_PrintParsedData(&parsed_data);
+   }
+   else
+   {
+      _DBG("[ERROR] V1.1 Parsing Failed\r\n");
+   }
+
+   //==========================================================================
+   // TEST 2: V1.2 샘플 프레임 (UDF 있음, Protocol Ver=0x12)
+   //==========================================================================
+   // 68 10 10 68 08 01 78 0F 12 34 56 78 A4 1C 13 00 00 56 78 12 05 00 41 E8 16
+   // UserData 길이 = 16 (0x10 - 3 = 13이 아니라 L=16)
+   // UDF: [12] [05] [00 41]
+   _DBG("==================================================\r\n");
+   _DBG("TEST 2: Protocol V1.2 (2021.05)\r\n");
+   _DBG("==================================================\r\n");
+
+   uint8_t frame_v12[] = {
+      0x68, 0x13, 0x13, 0x68,  // Start + L + L + Start (L = C + A + CI + UserData(12) + UDF(4) = 3 + 16 = 19)
+      0x08, 0x01, 0x78,        // C + A + CI
+      0x0F,                    // MDH
+      0x12, 0x34, 0x56, 0x78,  // ID (BCD): 78563412
+      0xA4,                    // Status: 10100100 (Q3초과, 옥내누수, Batt Low)
+      0x1C,                    // DIF
+      0x13,                    // VIF: 소수점 3
+      0x00, 0x00, 0x56, 0x78,  // Data (BCD): 78560000
+      0x12,                    // UDF: Protocol Ver (V1.2)
+      0x05,                    // UDF: Verification Month (5월)
+      0x00, 0x41,              // UDF: Manufacturer Code (0x0041 = 'A')
+      0x50,                    // Checksum (08+01+78+0F+12+34+56+78+A4+1C+13+00+00+56+78+12+05+00+41=350, LSB=50)
+      0x16                     // End
+   };
+
+   if (Meter_ParseFrame(frame_v12, sizeof(frame_v12), &parsed_data))
+   {
+      Meter_PrintParsedData(&parsed_data);
+   }
+   else
+   {
+      _DBG("[ERROR] V1.2 Parsing Failed\r\n");
+   }
+
+   //==========================================================================
+   // TEST 3: V1.3 샘플 프레임 (배터리 전압 5비트, Protocol Ver=0x13)
+   //==========================================================================
+   // 68 10 10 68 08 01 78 0F 12 34 56 78 BF 1C 13 00 90 12 34 13 06 00 41 xx 16
+   // Status: 10111111 (Q3초과, 역류, 옥내누수, Batt=31)
+   _DBG("==================================================\r\n");
+   _DBG("TEST 3: Protocol V1.3 (2023.01)\r\n");
+   _DBG("==================================================\r\n");
+
+   uint8_t frame_v13[] = {
+      0x68, 0x13, 0x13, 0x68,  // Start + L + L + Start (L = C + A + CI + UserData(12) + UDF(4) = 3 + 16 = 19)
+      0x08, 0x01, 0x78,        // C + A + CI
+      0x0F,                    // MDH
+      0x12, 0x34, 0x56, 0x78,  // ID (BCD): 78563412
+      0xBF,                    // Status: 10111111 (Q3, 역류, 누수, Batt=31)
+      0x1C,                    // DIF
+      0x13,                    // VIF: 소수점 3
+      0x00, 0x90, 0x12, 0x34,  // Data (BCD): 34129000
+      0x13,                    // UDF: Protocol Ver (V1.3)
+      0x06,                    // UDF: Verification Month (6월)
+      0x00, 0x41,              // UDF: Manufacturer Code
+      0x86,                    // Checksum (08+01+78+0F+12+34+56+78+BF+1C+13+00+90+12+34+13+06+00+41=386, LSB=86)
+      0x16                     // End
+   };
+
+   if (Meter_ParseFrame(frame_v13, sizeof(frame_v13), &parsed_data))
+   {
+      Meter_PrintParsedData(&parsed_data);
+   }
+   else
+   {
+      _DBG("[ERROR] V1.3 Parsing Failed\r\n");
+   }
+
+   //==========================================================================
+   // TEST 4: V1.4 샘플 프레임 (Status2 포함, Protocol Ver=0x14)
+   //==========================================================================
+   // 68 10 10 68 08 01 78 0F 12 34 56 78 E5 1C D3 00 11 22 33 14 07 00 41 xx 16
+   // Status1: 11100101 (Q3, 역류, 누수, Batt=5)
+   // S2&VIF: 11010011 (자석감지=1, 동파경보=1, VIF=0x13)
+   _DBG("==================================================\r\n");
+   _DBG("TEST 4: Protocol V1.4 (2024.07)\r\n");
+   _DBG("==================================================\r\n");
+
+   uint8_t frame_v14[] = {
+      0x68, 0x13, 0x13, 0x68,  // Start + L + L + Start (L = C + A + CI + UserData(12) + UDF(4) = 3 + 16 = 19)
+      0x08, 0x01, 0x78,        // C + A + CI
+      0x0F,                    // MDH
+      0x12, 0x34, 0x56, 0x78,  // ID (BCD): 78563412
+      0xE5,                    // Status1: 11100101 (Q3, 역류, 누수, Batt=5)
+      0x1C,                    // DIF
+      0xD3,                    // S2&VIF: 11010011 (자석감지, 동파경보, VIF=13)
+      0x00, 0x11, 0x22, 0x33,  // Data (BCD): 33221100
+      0x14,                    // UDF: Protocol Ver (V1.4)
+      0x07,                    // UDF: Verification Month (7월)
+      0x00, 0x41,              // UDF: Manufacturer Code
+      0xAB,                    // Checksum (08+01+78+0F+12+34+56+78+E5+1C+D3+00+11+22+33+14+07+00+41=3AB, LSB=AB)
+      0x16                     // End
+   };
+
+   if (Meter_ParseFrame(frame_v14, sizeof(frame_v14), &parsed_data))
+   {
+      Meter_PrintParsedData(&parsed_data);
+   }
+   else
+   {
+      _DBG("[ERROR] V1.4 Parsing Failed\r\n");
+   }
+
+   _DBG("==================================================\r\n");
+   _DBG("  Protocol Parser Test Complete\r\n");
+   _DBG("==================================================\r\n");
+   _DBG("\r\n");
 }
 
 /*-------------------------------------------------------------------------*//**

@@ -35,4 +35,5 @@
 .\objects\meter_protocol.o: ..\..\..\..\Drivers\Include\A31L12x_hal_usart1n.h
 .\objects\meter_protocol.o: ..\..\..\..\Drivers\Include\A31L12x_hal_wdt.h
 .\objects\meter_protocol.o: ..\A31L12x_it.h
+.\objects\meter_protocol.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\meter_protocol.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

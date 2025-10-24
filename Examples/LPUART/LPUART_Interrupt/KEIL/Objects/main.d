@@ -36,3 +36,4 @@
 .\objects\main.o: ..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_it.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: ..\..\..\..\Examples\LPUART\LPUART_Interrupt\meter_protocol.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

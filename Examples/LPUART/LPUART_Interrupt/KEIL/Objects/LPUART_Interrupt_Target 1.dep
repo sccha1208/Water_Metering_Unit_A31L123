@@ -8,7 +8,7 @@ I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cm
 I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3DAD2)
 I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3DAD2)
 I (..\..\..\..\Core\Device\ABOV\A31L12x\Include\system_A31L12x.h)(0x64338BDB)
-F (..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_it.c)(0x642E2F72)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\a31l12x_it.o --omf_browse .\objects\a31l12x_it.crf --depend .\objects\a31l12x_it.d)
+F (..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_it.c)(0x68F89510)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\a31l12x_it.o --omf_browse .\objects\a31l12x_it.crf --depend .\objects\a31l12x_it.d)
 I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\main_conf.h)(0x68F73384)
 I (..\..\..\..\Core\Device\ABOV\A31L12x\Include\A31L12x.h)(0x5FC6217C)
 I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D3DAD2)
@@ -44,7 +44,7 @@ I (..\..\..\..\Drivers\Include\A31L12x_hal_timer5n.h)(0x642E67C5)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_usart1n.h)(0x642E2B22)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_wdt.h)(0x642E2B35)
 I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_it.h)(0x642E2F98)
-F (..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_PortInit.c)(0x642E2FC0)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\a31l12x_portinit.o --omf_browse .\objects\a31l12x_portinit.crf --depend .\objects\a31l12x_portinit.d)
+F (..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_PortInit.c)(0x68FAE0FD)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\a31l12x_portinit.o --omf_browse .\objects\a31l12x_portinit.crf --depend .\objects\a31l12x_portinit.d)
 I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\main_conf.h)(0x68F73384)
 I (..\..\..\..\Core\Device\ABOV\A31L12x\Include\A31L12x.h)(0x5FC6217C)
 I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D3DAD2)
@@ -116,7 +116,7 @@ I (..\..\..\..\Drivers\Include\A31L12x_hal_timer5n.h)(0x642E67C5)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_usart1n.h)(0x642E2B22)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_wdt.h)(0x642E2B35)
 I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_it.h)(0x642E2F98)
-F (..\..\..\..\Examples\LPUART\LPUART_Interrupt\main.c)(0x68F73585)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\..\..\..\Examples\LPUART\LPUART_Interrupt\main.c)(0x68FAEB45)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\main_conf.h)(0x68F73384)
 I (..\..\..\..\Core\Device\ABOV\A31L12x\Include\A31L12x.h)(0x5FC6217C)
 I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D3DAD2)
@@ -153,11 +153,12 @@ I (..\..\..\..\Drivers\Include\A31L12x_hal_usart1n.h)(0x642E2B22)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_wdt.h)(0x642E2B35)
 I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\A31L12x_it.h)(0x642E2F98)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025156E)
-I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\meter_protocol.h)(0x68F7295E)
+I (..\..\..\..\Examples\LPUART\LPUART_Interrupt\meter_protocol.h)(0x68FA162A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025156C)
 F (..\main_conf.h)(0x68F73384)()
-F (..\meter_protocol.h)(0x68F7295E)()
-F (..\meter_protocol.c)(0x68F73125)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\meter_protocol.o --omf_browse .\objects\meter_protocol.crf --depend .\objects\meter_protocol.d)
-I (..\meter_protocol.h)(0x68F7295E)
+F (..\meter_protocol.h)(0x68FA162A)()
+F (..\meter_protocol.c)(0x68FA1618)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\meter_protocol.o --omf_browse .\objects\meter_protocol.crf --depend .\objects\meter_protocol.d)
+I (..\meter_protocol.h)(0x68FA162A)
 I (..\main_conf.h)(0x68F73384)
 I (..\..\..\..\Core\Device\ABOV\A31L12x\Include\A31L12x.h)(0x5FC6217C)
 I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D3DAD2)
@@ -193,6 +194,46 @@ I (..\..\..\..\Drivers\Include\A31L12x_hal_timer5n.h)(0x642E67C5)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_usart1n.h)(0x642E2B22)
 I (..\..\..\..\Drivers\Include\A31L12x_hal_wdt.h)(0x642E2B35)
 I (..\A31L12x_it.h)(0x642E2F98)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025156C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025156E)
+F (..\meter_protocol_parser.c)(0x68FA0CBF)(--c99 --gnu -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\Core\CMSIS\Include -I ..\..\..\..\Core\Device\ABOV\A31L12x\Include -I ..\..\..\..\Drivers\Include -I ..\..\..\..\Examples\LPUART\LPUART_Interrupt --gnu-I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="536" -D_RTE_ -DARMCM0P -D_RTE_-o .\objects\meter_protocol_parser.o --omf_browse .\objects\meter_protocol_parser.crf --depend .\objects\meter_protocol_parser.d)
+I (..\meter_protocol.h)(0x68FA162A)
+I (..\main_conf.h)(0x68F73384)
+I (..\..\..\..\Core\Device\ABOV\A31L12x\Include\A31L12x.h)(0x5FC6217C)
+I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D3DAD2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025156E)
+I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3DAD2)
+I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3DAD2)
+I (C:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3DAD2)
+I (..\..\..\..\Core\Device\ABOV\A31L12x\Include\system_A31L12x.h)(0x64338BDB)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_aa_types.h)(0x642E676E)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_debug_frmwrk.h)(0x68C12741)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_uartn.h)(0x642E2B11)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_libcfg.h)(0x642E2977)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_wtidky.h)(0x642E2B62)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_adc.h)(0x642E290B)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_cmpn.h)(0x642E6779)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_crc.h)(0x642E2885)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_dmacn.h)(0x642E6781)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_fmc.h)(0x642E28FA)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_i2cn.h)(0x642E2778)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_intc.h)(0x642E2937)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_lcd.h)(0x642E2953)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_lpuart.h)(0x642E678C)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_pcu.h)(0x642E298B)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_pmu.h)(0x642E6793)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_pwr.h)(0x642E299B)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_rtcc.h)(0x642E6799)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_scn.h)(0x642E67A1)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_scu.h)(0x642E29B6)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_sculv.h)(0x642E29C6)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_spin.h)(0x642E67AA)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_timer4n.h)(0x642E67BB)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_timer5n.h)(0x642E67C5)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_usart1n.h)(0x642E2B22)
+I (..\..\..\..\Drivers\Include\A31L12x_hal_wdt.h)(0x642E2B35)
+I (..\A31L12x_it.h)(0x642E2F98)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025156C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025156E)
 F (..\..\..\..\Core\Device\ABOV\A31L12x\Source\ARM\startup_A31L12x.s)(0x5DA56EB2)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "ARMCM0P SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_a31l12x.lst --xref -o .\objects\startup_a31l12x.o --depend .\objects\startup_a31l12x.d)
 F (..\..\..\..\Option\KEIL\option_A31L12x.s)(0x5D5B7D1A)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\sdjung\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0plus\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "ARMCM0P SETA 1" --pd "_RTE_ SETA 1"--list .\listings\option_a31l12x.lst --xref -o .\objects\option_a31l12x.o --depend .\objects\option_a31l12x.d)

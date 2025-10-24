@@ -14,17 +14,5 @@
     "deny": [],
     "ask": []
   },
-  "outputStyle": "firmware-core-analysis-ko",
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell -Command \"Write-Host '=== Claude 작업 완료 ===' -ForegroundColor Green\""
-          }
-        ]
-      }
-    ]
-  }
+  "outputStyle": "firmware-core-analysis-ko"
 }

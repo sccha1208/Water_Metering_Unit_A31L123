@@ -2,8 +2,9 @@
  *******************************************************************************
  * @file        meter_protocol.h
  * @author      Seoul Digital Water Meter Protocol Implementation
- * @brief       서울시 디지털계량기 프로토콜 V1.3 헤더 파일
+ * @brief       서울시 디지털계량기 프로토콜 V1.1~V1.4 범용 헤더 파일
  * @details     1200bps, 8-N-1 통신 프로토콜
+ *              모든 버전(V1.1, V1.2, V1.3, V1.4) 자동 감지 및 파싱 지원
  *******************************************************************************
  */
 
@@ -11,6 +12,7 @@
 #define _METER_PROTOCOL_H_
 
 #include "main_conf.h"
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -174,6 +176,157 @@ void Meter_Reset(void);
 
 // SysTick 지원 함수 (A31L12x_it.c에서 호출)
 void Meter_SysTick_Increment(void);
+
+//******************************************************************************
+// 범용 프로토콜 파서 (V1.1~V1.4 지원)
+//******************************************************************************
+
+// 프로토콜 버전 열거형
+typedef enum
+{
+    PROTOCOL_UNKNOWN = 0,       // 알 수 없는 버전
+    PROTOCOL_V1_1    = 11,      // V1.1 (2013.06)
+    PROTOCOL_V1_2    = 12,      // V1.2 (2021.05)
+    PROTOCOL_V1_3    = 13,      // V1.3 (2023.01)
+    PROTOCOL_V1_4    = 14       // V1.4 (2024.07~2025.05)
+} ProtocolVersion_t;
+
+// Status 정보 (버전별 차이 반영)
+typedef struct
+{
+    // 공통 필드 (모든 버전)
+    bool q3_exceed;             // Bit 7: 최대유량 초과 (V1.1은 Q4, V1.2+는 Q3)
+    bool reverse_flow;          // Bit 6: 역류 감지
+    bool indoor_leak;           // Bit 5: 옥내누수
+
+    // 버전별 전용 필드
+    union {
+        // V1.1 전용
+        struct {
+            bool batt_low;          // Bit 2: 배터리 부족
+            bool freeze_warning;    // Bit 1: 동파경고 (-2℃ 3시간)
+        } v11;
+
+        // V1.2 전용
+        struct {
+            bool batt_low;          // Bit 2: 배터리 부족 (3개월 전)
+        } v12;
+
+        // V1.3 전용
+        struct {
+            uint8_t batt_voltage;   // Bit 4-0: 배터리 전압 (0~31, 0.1V 단위)
+                                    // 00000 = 3.7V 이상
+                                    // 00001 = 3.6~3.7V
+                                    // ...
+                                    // 11111 = 0.7V 미만
+        } v13;
+
+        // V1.4 전용
+        struct {
+            uint8_t batt_voltage;   // Bit 4-0: 배터리 전압 (V1.3과 동일)
+            bool magnet_detected;   // Status2 Bit 7: 자석 감지 (5분)
+            bool freeze_warning;    // Status2 Bit 6: 동파경보 (0℃ 1분)
+        } v14;
+    } ext;
+
+} MeterStatus_t;
+
+// 파싱된 계량기 데이터 (디버그 출력용, 스택 할당)
+typedef struct
+{
+    // 프레임 기본 정보
+    ProtocolVersion_t version;      // 감지된 프로토콜 버전
+    bool parse_success;             // 파싱 성공 여부
+
+    // 프레임 필드
+    uint8_t c_field;                // Control Field
+    uint8_t a_field;                // Address Field
+    uint8_t ci_field;               // CI Field
+
+    // User Data
+    uint32_t meter_id;              // 기물번호 (BCD → Decimal)
+                                    // 예: BCD 0x09123456 → 9123456
+
+    MeterStatus_t status;           // Status 정보 (버전별)
+
+    // DIF/VIF 정보
+    uint16_t diameter_mm;           // 계량기 구경 (15, 20, 25, ..., 300)
+    uint8_t decimal_point;          // 소수점 위치 (2 or 3)
+
+    // 검침값 (원본 BCD)
+    uint8_t reading_bcd[4];         // BCD 형식 그대로 (Little Endian)
+                                    // 예: 12345.678 → {0x78, 0x56, 0x34, 0x12}
+
+    // 검침값 (변환 결과 - 디스플레이용)
+    uint32_t reading_value;         // BCD를 정수로 변환
+                                    // 예: 12345678 (소수점 없음)
+                                    // 실제 값 = reading_value / 10^decimal_point
+
+    // UDF (선택적, V1.2+)
+    bool has_udf;                   // UDF 포함 여부
+    uint8_t udf_protocol_ver;       // UDF 프로토콜 버전 (0x12, 0x13, 0x14)
+    uint8_t udf_verification_month; // 검정 월 (1~12)
+    uint16_t udf_manufacturer_code; // 제조사 코드 (예: 0x0041 = 'A')
+
+    // 체크섬
+    uint8_t checksum_received;      // 수신한 체크섬
+    uint8_t checksum_calculated;    // 계산한 체크섬
+    bool checksum_valid;            // 체크섬 유효성
+
+    // 원본 프레임 참조 (포인터만 저장, 복사 안 함)
+    uint8_t* raw_frame;             // 원본 프레임 포인터
+    uint16_t raw_length;            // 원본 프레임 길이
+
+} MeterData_t;
+
+//******************************************************************************
+// 범용 파서 함수 프로토타입
+//******************************************************************************
+
+/**
+ * @brief 프로토콜 버전 자동 감지
+ * @param frame 원본 프레임 (68 L L 68 ...)
+ * @param length 프레임 길이
+ * @return 감지된 프로토콜 버전
+ */
+ProtocolVersion_t Meter_DetectVersion(uint8_t* frame, uint16_t length);
+
+/**
+ * @brief 모든 버전 프레임 통합 파싱
+ * @param frame 원본 프레임
+ * @param length 프레임 길이
+ * @param parsed_data 파싱 결과 저장 구조체 (출력)
+ * @return true: 파싱 성공, false: 파싱 실패
+ */
+bool Meter_ParseFrame(uint8_t* frame, uint16_t length, MeterData_t* parsed_data);
+
+/**
+ * @brief 파싱된 데이터를 디버그 포트로 출력
+ * @param data 파싱된 데이터
+ * @note UART1 디버그 포트로 출력 (PB0:TX, PB1:RX)
+ */
+void Meter_PrintParsedData(MeterData_t* data);
+
+/**
+ * @brief BCD 4바이트를 uint32로 변환
+ * @param bcd BCD 배열 [4] (Little Endian)
+ * @return 변환된 정수 (예: {0x78, 0x56, 0x34, 0x12} → 12345678)
+ */
+uint32_t Meter_BCD_To_Uint32(uint8_t bcd[4]);
+
+/**
+ * @brief 배터리 전압 코드를 실제 전압(V)으로 변환
+ * @param voltage_code 0~31 (5비트)
+ * @return 전압 (V), 예: 36 (3.6V를 10배한 값)
+ */
+uint8_t Meter_GetBatteryVoltage_x10(uint8_t voltage_code);
+
+/**
+ * @brief 구경 코드를 mm 단위로 변환
+ * @param dif_code DIF의 상위 4비트 (구경 코드)
+ * @return 구경 (mm), 예: 15, 20, 25, 32, ..., 300
+ */
+uint16_t Meter_GetDiameter(uint8_t dif_code);
 
 #ifdef __cplusplus
 }
